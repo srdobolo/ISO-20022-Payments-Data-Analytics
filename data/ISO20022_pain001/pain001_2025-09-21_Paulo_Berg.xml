@@ -1,5 +1,20 @@
 <?xml version='1.0' encoding='utf-8'?>
-<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.09"><CstmrCdtTrfInitn><GrpHdr><MsgId>PAIN-2025-09-21-Paulo_Berg-9c52119b</MsgId><CreDtTm>2025-09-21T08:00:00Z</CreDtTm><NbOfTxs>192</NbOfTxs><CtrlSum>23201336.71</CtrlSum><InitgPty><Nm>Paulo Berg</Nm></InitgPty></GrpHdr><PmtInf><PmtInfId>PMTINF-2025-09-21-8db2c5</PmtInfId><PmtMtd>TRA</PmtMtd><ReqdExctnDt>2025-09-21</ReqdExctnDt><Dbtr><Nm>Paulo Berg</Nm></Dbtr><DbtrAcct><Id><IBAN>FR6384128849381809843940</IBAN></Id></DbtrAcct><DbtrAgt><FinInstnId><BIC>AGRIFRPPXXX</BIC></FinInstnId></DbtrAgt><CdtTrfTxInf>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.09">
+<CstmrCdtTrfInitn>
+  <GrpHdr>
+    <MsgId>PAIN-2025-09-21-Paulo_Berg-9c52119b</MsgId>
+      <CreDtTm>2025-09-21T08:00:00Z</CreDtTm>
+        <NbOfTxs>192</NbOfTxs>
+          <CtrlSum>23201336.71</CtrlSum>
+          <InitgPty><Nm>Paulo Berg</Nm></InitgPty>
+          </GrpHdr>
+            <PmtInf><PmtInfId>PMTINF-2025-09-21-8db2c5</PmtInfId>
+            <PmtMtd>TRA</PmtMtd>
+            <ReqdExctnDt>2025-09-21</ReqdExctnDt>
+            <Dbtr><Nm>Paulo Berg</Nm></Dbtr>
+            <DbtrAcct><Id><IBAN>FR6384128849381809843940</IBAN></Id>
+            </DbtrAcct><DbtrAgt><FinInstnId><BIC>AGRIFRPPXXX</BIC></FinInstnId></DbtrAgt>
+            <CdtTrfTxInf>
           <PmtId>
             <InstrId>INST-20250921-00576</InstrId>
             <EndToEndId>E2E-20250921-00576</EndToEndId>

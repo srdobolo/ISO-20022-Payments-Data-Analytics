@@ -29,14 +29,57 @@ def parse_datetime(dt_str):
     except Exception:
         return None
 
+def extract_amount_currency(tx, ns):
+    """
+    Robust amount extractor that handles:
+      - <IntrBkSttlmAmt Ccy="...">123</IntrBkSttlmAmt>
+      - <InstdAmt Ccy="...">123</InstdAmt>
+      - <Amt Ccy="...">123</Amt>
+      - <Amt><InstdAmt Ccy="...">123</InstdAmt></Amt>
+    Returns (amount_str or None, currency_str or None)
+    """
+    # 1) Preferred: settlement amount
+    el = tx.find('.//ns:IntrBkSttlmAmt', ns)
+    if el is not None and el.text and el.attrib.get('Ccy'):
+        return el.text.strip(), el.attrib.get('Ccy').strip()
+
+    # 2) Instructed amount (standalone)
+    el = tx.find('.//ns:InstdAmt', ns)
+    if el is not None and el.text and el.attrib.get('Ccy'):
+        return el.text.strip(), el.attrib.get('Ccy').strip()
+
+    # 3) Parent <Amt> that itself has Ccy/text
+    el = tx.find('.//ns:Amt', ns)
+    if el is not None:
+        # 3a) If Amt contains InstdAmt child, use that
+        child = el.find('.//ns:InstdAmt', ns)
+        if child is not None and child.text and child.attrib.get('Ccy'):
+            return child.text.strip(), child.attrib.get('Ccy').strip()
+        # 3b) Else if Amt itself has value/ccy
+        if el.text and el.attrib.get('Ccy'):
+            return el.text.strip(), el.attrib.get('Ccy').strip()
+
+    return None, None
+
+def extract_debtor_triplet(root, tx, ns):
+    """
+    Prefer debtor data at transaction level; fallback to message level.
+    Returns (name, iban, country)
+    """
+    name = (tx.findtext('.//ns:Dbtr/ns:Nm', namespaces=ns)
+            or root.findtext('.//ns:Dbtr/ns:Nm', namespaces=ns))
+    iban = (tx.findtext('.//ns:DbtrAcct/ns:Id/ns:IBAN', namespaces=ns)
+            or root.findtext('.//ns:DbtrAcct/ns:Id/ns:IBAN', namespaces=ns))
+    ctry = (tx.findtext('.//ns:Dbtr/ns:PstlAdr/ns:Ctry', namespaces=ns)
+            or root.findtext('.//ns:Dbtr/ns:PstlAdr/ns:Ctry', namespaces=ns))
+    return name, iban, ctry
+
 # ========================
-# DIM PARTY + PURPOSE LOOKUP FROM PAIN.001
+# DIM PARTY + PURPOSE LOOKUP
 # ========================
 parties = {}
 party_counter = 1
-
-# Dict for EndToEndId -> PurposeCode mapping
-purpose_lookup = {}
+purpose_lookup = {}  # EndToEndId (normalized) -> PurposeCode
 
 def get_or_create_party(name, iban, country):
     global party_counter
@@ -51,14 +94,14 @@ def get_or_create_party(name, iban, country):
         party_counter += 1
     return parties[key]['PartyID']
 
-print("Extracting parties & purpose codes from pain.001 ...")
+print("Extracting parties and purpose codes from pain.001 ...")
 
 for file in glob.glob(os.path.join(pain001_dir, '*.xml')):
     tree = ET.parse(file)
     root = tree.getroot()
     ns = {'ns': root.tag.split('}')[0].strip('{')}
 
-    # Debtor
+    # Debtor at message level
     dbtr_name = root.find('.//ns:Dbtr/ns:Nm', ns)
     dbtr_iban = root.find('.//ns:DbtrAcct/ns:Id/ns:IBAN', ns)
     dbtr_country = root.find('.//ns:Dbtr/ns:PstlAdr/ns:Ctry', ns)
@@ -68,7 +111,7 @@ for file in glob.glob(os.path.join(pain001_dir, '*.xml')):
         dbtr_country.text if dbtr_country is not None else None
     )
 
-    # Creditors & PurposeCode lookup
+    # Creditors + PurposeCode per transaction
     for cdt in root.findall('.//ns:CdtTrfTxInf', ns):
         cdtr_name = cdt.find('.//ns:Cdtr/ns:Nm', ns)
         cdtr_iban = cdt.find('.//ns:CdtrAcct/ns:Id/ns:IBAN', ns)
@@ -81,11 +124,9 @@ for file in glob.glob(os.path.join(pain001_dir, '*.xml')):
 
         end_to_end = cdt.findtext('.//ns:PmtId/ns:EndToEndId', namespaces=ns)
         purpose_cd = cdt.findtext('.//ns:Purp/ns:Cd', namespaces=ns)
-
         if end_to_end and purpose_cd:
-            purpose_lookup[end_to_end] = purpose_cd
+            purpose_lookup[(end_to_end or '').strip().upper()] = purpose_cd.strip()
 
-# Write DimParty
 with open(os.path.join(OUTPUT_DIR, 'DimParty.csv'), 'w', newline='', encoding='utf-8') as f:
     writer = csv.DictWriter(f, fieldnames=['PartyID', 'Name', 'IBAN', 'CountryCode'])
     writer.writeheader()
@@ -110,37 +151,32 @@ for file in glob.glob(os.path.join(pacs008_dir, '*.xml')):
     payment_date_str = root.findtext('.//ns:GrpHdr/ns:CreDtTm', namespaces=ns)
     payment_date = parse_datetime(payment_date_str)
 
-    debtor_name = root.findtext('.//ns:Dbtr/ns:Nm', namespaces=ns)
-    debtor_iban = root.findtext('.//ns:DbtrAcct/ns:Id/ns:IBAN', namespaces=ns)
-    debtor_country = root.findtext('.//ns:Dbtr/ns:PstlAdr/ns:Ctry', namespaces=ns)
-    debtor_id = get_or_create_party(debtor_name, debtor_iban, debtor_country)
-
     for tx in root.findall('.//ns:CdtTrfTxInf', ns):
         instr_id = tx.findtext('.//ns:PmtId/ns:InstrId', namespaces=ns)
         end_to_end = tx.findtext('.//ns:PmtId/ns:EndToEndId', namespaces=ns)
+        norm_end = (end_to_end or '').strip().upper()
 
-        # Amount extraction
-        amount_el = tx.find('.//ns:IntrBkSttlmAmt', ns) or tx.find('.//ns:Amt', ns)
-        amount = amount_el.text.strip() if amount_el is not None else None
-        currency = amount_el.attrib.get('Ccy').strip() if amount_el is not None else None
+        # Amount & Currency (robust)
+        amount, currency = extract_amount_currency(tx, ns)
 
+        # Debtor (prefer tx-level, fallback to message-level); guarantees a PartyID
+        debtor_name, debtor_iban, debtor_country = extract_debtor_triplet(root, tx, ns)
+        debtor_id = get_or_create_party(debtor_name, debtor_iban, debtor_country)
+
+        # Creditor
         cdtr_name = tx.findtext('.//ns:Cdtr/ns:Nm', namespaces=ns)
         cdtr_iban = tx.findtext('.//ns:CdtrAcct/ns:Id/ns:IBAN', namespaces=ns)
         cdtr_country = tx.findtext('.//ns:Cdtr/ns:PstlAdr/ns:Ctry', namespaces=ns)
         creditor_id = get_or_create_party(cdtr_name, cdtr_iban, cdtr_country)
 
-        debtor_bic = root.findtext('.//ns:DbtrAgt/ns:FinInstnId/ns:BICFI', namespaces=ns)
+        # Agents, Purpose, Charges
+        debtor_bic = tx.findtext('.//ns:DbtrAgt/ns:FinInstnId/ns:BICFI', namespaces=ns) \
+                      or root.findtext('.//ns:DbtrAgt/ns:FinInstnId/ns:BICFI', namespaces=ns)
         creditor_bic = tx.findtext('.//ns:CdtrAgt/ns:FinInstnId/ns:BICFI', namespaces=ns)
 
-        # PurposeCode: try from pacs.008; if missing, enrich from pain.001 lookup
         purpose_code = tx.findtext('.//ns:Purp/ns:Cd', namespaces=ns)
-        if not purpose_code and end_to_end in purpose_lookup:
-            purpose_code = purpose_lookup[end_to_end]
-
-        # ChargeBearer: use tx value if present, otherwise N/A
-        charge_bearer = tx.findtext('.//ns:ChrgBr', namespaces=ns)
-        if not charge_bearer:
-            charge_bearer = "N/A"
+        if not purpose_code and norm_end in purpose_lookup:
+            purpose_code = purpose_lookup[norm_end]
 
         fact_rows.append({
             'PaymentID': f"{msg_id}-{instr_id}",
@@ -157,7 +193,6 @@ for file in glob.glob(os.path.join(pacs008_dir, '*.xml')):
             'CreditorAgentBIC': creditor_bic,
             'PurposeCode': purpose_code,
             'StatusCode': None,
-            'ChargeBearer': charge_bearer,
             'ProcessingTimeMinutes': None
         })
 
@@ -170,11 +205,12 @@ with open(os.path.join(OUTPUT_DIR, 'FactPayments.csv'), 'w', newline='', encodin
 print(f"FactPayments.csv created with {len(fact_rows)} rows")
 
 # ========================
-# ENRICH WITH PACS.002
+# ENRICH WITH PACS.002 (normalized EndToEndId)
 # ========================
 print("Enriching FactPayments with pacs.002 ...")
 
-index_by_endtoend = {row['EndToEndId']: row for row in fact_rows if row['EndToEndId']}
+index_by_endtoend = { (row['EndToEndId'] or '').strip().upper(): row
+                      for row in fact_rows if row['EndToEndId'] }
 
 for file in glob.glob(os.path.join(pacs002_dir, '*.xml')):
     tree = ET.parse(file)
@@ -182,7 +218,7 @@ for file in glob.glob(os.path.join(pacs002_dir, '*.xml')):
     ns = {'ns': root.tag.split('}')[0].strip('{')}
 
     for tx in root.findall('.//ns:TxInfAndSts', ns):
-        org_endtoend = tx.findtext('.//ns:OrgnlEndToEndId', namespaces=ns)
+        org_endtoend = (tx.findtext('.//ns:OrgnlEndToEndId', namespaces=ns) or '').strip().upper()
         tx_status = tx.findtext('.//ns:TxSts', namespaces=ns)
         accpt_time_str = tx.findtext('.//ns:AccptncDtTm', namespaces=ns)
 
@@ -198,6 +234,7 @@ for file in glob.glob(os.path.join(pacs002_dir, '*.xml')):
                     diff = (accpt_time - payment_dt).total_seconds() / 60
                     row['ProcessingTimeMinutes'] = round(diff, 2)
 
+# Rewrite FactPayments after pacs.002
 with open(os.path.join(OUTPUT_DIR, 'FactPayments.csv'), 'w', newline='', encoding='utf-8') as f:
     writer = csv.DictWriter(f, fieldnames=fact_rows[0].keys())
     writer.writeheader()
@@ -206,7 +243,7 @@ with open(os.path.join(OUTPUT_DIR, 'FactPayments.csv'), 'w', newline='', encodin
 print("FactPayments.csv enriched with pacs.002")
 
 # ========================
-# ENRICH WITH CAMT.054
+# ENRICH WITH CAMT.054 (normalized EndToEndId)
 # ========================
 print("Reconciling payments with camt.054 ...")
 
@@ -222,7 +259,7 @@ for file in glob.glob(os.path.join(camt054_dir, '*.xml')):
         end_to_end_el = entry.find('.//ns:EndToEndId', ns)
         if end_to_end_el is None:
             continue
-        end_to_end_id = end_to_end_el.text
+        end_to_end_id = (end_to_end_el.text or '').strip().upper()
 
         if end_to_end_id in index_by_endtoend:
             row = index_by_endtoend[end_to_end_id]
@@ -233,6 +270,7 @@ for file in glob.glob(os.path.join(camt054_dir, '*.xml')):
                     diff = (booking_date - payment_dt).total_seconds() / 60
                     row['ProcessingTimeMinutes'] = round(diff, 2)
 
+# Final FactPayments write
 with open(os.path.join(OUTPUT_DIR, 'FactPayments.csv'), 'w', newline='', encoding='utf-8') as f:
     writer = csv.DictWriter(f, fieldnames=fact_rows[0].keys())
     writer.writeheader()
@@ -247,9 +285,13 @@ print("Generating dimension tables ...")
 
 fact_df = pd.read_csv(os.path.join(OUTPUT_DIR, 'FactPayments.csv'), dtype=str)
 
-# DimStatus
+# DimStatus with mapping
+status_mapping = {
+    "ACSC": "Accepted Settlement Completed — Transaction has been completed successfully",
+    "ACSP": "Accepted Settlement in Process — Transaction is being processed and will be settled"
+}
 dim_status = fact_df[['StatusCode']].dropna().drop_duplicates().sort_values(by='StatusCode')
-dim_status['Description'] = dim_status['StatusCode']
+dim_status['Description'] = dim_status['StatusCode'].map(status_mapping).fillna(dim_status['StatusCode'])
 dim_status.to_csv(os.path.join(OUTPUT_DIR, 'DimStatus.csv'), index=False)
 
 # DimCurrency
@@ -258,9 +300,21 @@ dim_currency['CurrencyName'] = dim_currency['CurrencyCode']
 dim_currency['CurrencySymbol'] = ''
 dim_currency.to_csv(os.path.join(OUTPUT_DIR, 'DimCurrency.csv'), index=False)
 
-# DimPurposeCode
+# DimPurposeCode with mapping
+purpose_mapping = {
+    "DIVD": "Dividends",
+    "EDUC": "Education",
+    "GOVT": "Government Payments",
+    "LOAN": "Loan",
+    "PENS": "Pension",
+    "ROYA": "Royalties",
+    "SALA": "Salary",
+    "SERV": "Services",
+    "SUPP": "Supplier Payment",
+    "TAXS": "Taxes"
+}
 dim_purpose = fact_df[['PurposeCode']].dropna().drop_duplicates().sort_values(by='PurposeCode')
-dim_purpose['Description'] = dim_purpose['PurposeCode']
+dim_purpose['Description'] = dim_purpose['PurposeCode'].map(purpose_mapping).fillna(dim_purpose['PurposeCode'])
 dim_purpose.to_csv(os.path.join(OUTPUT_DIR, 'DimPurposeCode.csv'), index=False)
 
 # DimDate
