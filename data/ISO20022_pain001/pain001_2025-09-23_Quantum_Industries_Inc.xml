@@ -1,0 +1,3074 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.09"><CstmrCdtTrfInitn><GrpHdr><MsgId>PAIN-2025-09-23-Quantum_Industries_Inc-5b0ecd15</MsgId><CreDtTm>2025-09-23T08:00:00Z</CreDtTm><NbOfTxs>128</NbOfTxs><CtrlSum>9918506.01</CtrlSum><InitgPty><Nm>Quantum Industries Inc</Nm></InitgPty></GrpHdr><PmtInf><PmtInfId>PMTINF-2025-09-23-e5ab46</PmtInfId><PmtMtd>TRA</PmtMtd><ReqdExctnDt>2025-09-23</ReqdExctnDt><Dbtr><Nm>Quantum Industries Inc</Nm></Dbtr><DbtrAcct><Id><IBAN>NL4684136296941218169945</IBAN></Id></DbtrAcct><DbtrAgt><FinInstnId><BIC>ABNANL2AXXX</BIC></FinInstnId></DbtrAgt><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00384</InstrId>
+            <EndToEndId>E2E-20250923-00384</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CHF">14968.89</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>ACTVPTPLXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Omega Tech plc</Nm>
+            <PstlAdr>
+              <StrtNm>Avenida Central</StrtNm>
+              <BldgNb>293</BldgNb>
+              <TwnNm>Lisboa</TwnNm>
+              <Ctry>PT</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>PT9564676705412047639076</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0384</Ustrd></RmtInf>
+          <Purp><Cd>PENS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00385</InstrId>
+            <EndToEndId>E2E-20250923-00385</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CAD">8772.32</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>AGRIFRPPXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Omar Weiss</Nm>
+            <PstlAdr>
+              <StrtNm>Avenue de Paris</StrtNm>
+              <BldgNb>415</BldgNb>
+              <TwnNm>Paris</TwnNm>
+              <Ctry>FR</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>FR1433832679956321577778</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0385</Ustrd></RmtInf>
+          <Purp><Cd>SUPP</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00386</InstrId>
+            <EndToEndId>E2E-20250923-00386</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="USD">447980.82</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>RAIFCH22XXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Euro Tech Ltd</Nm>
+            <PstlAdr>
+              <StrtNm>Bahnhofstrasse</StrtNm>
+              <BldgNb>606</BldgNb>
+              <TwnNm>Zurich</TwnNm>
+              <Ctry>CH</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>CH8864175597560832513849</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0386</Ustrd></RmtInf>
+          <Purp><Cd>SALA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00387</InstrId>
+            <EndToEndId>E2E-20250923-00387</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="AUD">30424.37</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BARCGB22XXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Swift Media LLC</Nm>
+            <PstlAdr>
+              <StrtNm>High Street</StrtNm>
+              <BldgNb>262</BldgNb>
+              <TwnNm>London</TwnNm>
+              <Ctry>GB</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>GB9518659689879858881695</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0387</Ustrd></RmtInf>
+          <Purp><Cd>LOAN</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00388</InstrId>
+            <EndToEndId>E2E-20250923-00388</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="USD">7798.33</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>INGBNL2AXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Apex Automotive SRL</Nm>
+            <PstlAdr>
+              <StrtNm>Damrak</StrtNm>
+              <BldgNb>311</BldgNb>
+              <TwnNm>Amsterdam</TwnNm>
+              <Ctry>NL</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>NL3449578587264386772622</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0388</Ustrd></RmtInf>
+          <Purp><Cd>EDUC</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00389</InstrId>
+            <EndToEndId>E2E-20250923-00389</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">12549.05</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>ULSBIE2DXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>John Weiss</Nm>
+            <PstlAdr>
+              <StrtNm>O'Connell Street</StrtNm>
+              <BldgNb>905</BldgNb>
+              <TwnNm>Dublin</TwnNm>
+              <Ctry>IE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IE1644883980631847357122</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0389</Ustrd></RmtInf>
+          <Purp><Cd>GOVT</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00390</InstrId>
+            <EndToEndId>E2E-20250923-00390</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CAD">11731.50</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>RAIFCH22XXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Omega Logistics LLC</Nm>
+            <PstlAdr>
+              <StrtNm>Bahnhofstrasse</StrtNm>
+              <BldgNb>46</BldgNb>
+              <TwnNm>Zurich</TwnNm>
+              <Ctry>CH</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>CH6167306850138238603535</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0390</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00391</InstrId>
+            <EndToEndId>E2E-20250923-00391</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">11584.86</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>CHASUS33XXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>City Council New York</Nm>
+            <PstlAdr>
+              <StrtNm>Main Avenue</StrtNm>
+              <BldgNb>479</BldgNb>
+              <TwnNm>New York</TwnNm>
+              <Ctry>US</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>US6784087822970979483338</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0391</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00392</InstrId>
+            <EndToEndId>E2E-20250923-00392</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="USD">10947.43</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>AIBKIE2DXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Summit Holdings LLC</Nm>
+            <PstlAdr>
+              <StrtNm>O'Connell Street</StrtNm>
+              <BldgNb>444</BldgNb>
+              <TwnNm>Dublin</TwnNm>
+              <Ctry>IE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IE1702393036360041347251</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0392</Ustrd></RmtInf>
+          <Purp><Cd>SUPP</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00393</InstrId>
+            <EndToEndId>E2E-20250923-00393</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CAD">6249.54</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>CGDIPTPLXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Omega Retail plc</Nm>
+            <PstlAdr>
+              <StrtNm>Avenida Central</StrtNm>
+              <BldgNb>727</BldgNb>
+              <TwnNm>Lisboa</TwnNm>
+              <Ctry>PT</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>PT7032104842946233599408</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0393</Ustrd></RmtInf>
+          <Purp><Cd>ROYA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00394</InstrId>
+            <EndToEndId>E2E-20250923-00394</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="AUD">1065.00</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>HBUKGB4BXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Vertex Consulting SAS</Nm>
+            <PstlAdr>
+              <StrtNm>High Street</StrtNm>
+              <BldgNb>728</BldgNb>
+              <TwnNm>London</TwnNm>
+              <Ctry>GB</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>GB8529341498779954233254</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0394</Ustrd></RmtInf>
+          <Purp><Cd>SERV</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00395</InstrId>
+            <EndToEndId>E2E-20250923-00395</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="USD">66221.81</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>RAIFCH22XXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Euro Systems SAS</Nm>
+            <PstlAdr>
+              <StrtNm>Bahnhofstrasse</StrtNm>
+              <BldgNb>763</BldgNb>
+              <TwnNm>Zurich</TwnNm>
+              <Ctry>CH</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>CH7034572544444367180872</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0395</Ustrd></RmtInf>
+          <Purp><Cd>EDUC</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00396</InstrId>
+            <EndToEndId>E2E-20250923-00396</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="USD">143324.88</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BOFAUS3NXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Prime Tech SA</Nm>
+            <PstlAdr>
+              <StrtNm>Main Avenue</StrtNm>
+              <BldgNb>285</BldgNb>
+              <TwnNm>New York</TwnNm>
+              <Ctry>US</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>US4993520910695425145694</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0396</Ustrd></RmtInf>
+          <Purp><Cd>GOVT</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00397</InstrId>
+            <EndToEndId>E2E-20250923-00397</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">210288.18</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>HANDSESSXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Blue Industries Inc</Nm>
+            <PstlAdr>
+              <StrtNm>Kungsgatan</StrtNm>
+              <BldgNb>494</BldgNb>
+              <TwnNm>Stockholm</TwnNm>
+              <Ctry>SE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>SE4861481440275492256211</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0397</Ustrd></RmtInf>
+          <Purp><Cd>SERV</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00398</InstrId>
+            <EndToEndId>E2E-20250923-00398</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">14325.57</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>POFICHBEXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Green Foods SAS</Nm>
+            <PstlAdr>
+              <StrtNm>Bahnhofstrasse</StrtNm>
+              <BldgNb>607</BldgNb>
+              <TwnNm>Zurich</TwnNm>
+              <Ctry>CH</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>CH3492740237395975602178</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0398</Ustrd></RmtInf>
+          <Purp><Cd>PENS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00399</InstrId>
+            <EndToEndId>E2E-20250923-00399</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">2894.94</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>HBUKGB4BXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Pacific Holdings BV</Nm>
+            <PstlAdr>
+              <StrtNm>High Street</StrtNm>
+              <BldgNb>978</BldgNb>
+              <TwnNm>London</TwnNm>
+              <Ctry>GB</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>GB6158507963766881409625</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0399</Ustrd></RmtInf>
+          <Purp><Cd>DIVD</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00400</InstrId>
+            <EndToEndId>E2E-20250923-00400</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CAD">4673.79</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>SWEDSESSXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Euro Industries LLC</Nm>
+            <PstlAdr>
+              <StrtNm>Kungsgatan</StrtNm>
+              <BldgNb>427</BldgNb>
+              <TwnNm>Stockholm</TwnNm>
+              <Ctry>SE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>SE4463693396683150544470</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0400</Ustrd></RmtInf>
+          <Purp><Cd>GOVT</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00401</InstrId>
+            <EndToEndId>E2E-20250923-00401</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">7999.24</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>AGRIFRPPXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Apex Retail SRL</Nm>
+            <PstlAdr>
+              <StrtNm>Avenue de Paris</StrtNm>
+              <BldgNb>350</BldgNb>
+              <TwnNm>Paris</TwnNm>
+              <Ctry>FR</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>FR9166358198168662407158</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0401</Ustrd></RmtInf>
+          <Purp><Cd>SUPP</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00402</InstrId>
+            <EndToEndId>E2E-20250923-00402</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CHF">5288.02</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>CCFRFRPPXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Vertex Finance SpA</Nm>
+            <PstlAdr>
+              <StrtNm>Avenue de Paris</StrtNm>
+              <BldgNb>323</BldgNb>
+              <TwnNm>Paris</TwnNm>
+              <Ctry>FR</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>FR5280736799283307677702</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0402</Ustrd></RmtInf>
+          <Purp><Cd>EDUC</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00403</InstrId>
+            <EndToEndId>E2E-20250923-00403</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="AUD">7479.26</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>CCFRFRPPXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Eva Berg</Nm>
+            <PstlAdr>
+              <StrtNm>Avenue de Paris</StrtNm>
+              <BldgNb>802</BldgNb>
+              <TwnNm>Paris</TwnNm>
+              <Ctry>FR</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>FR6333555532804669538118</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0403</Ustrd></RmtInf>
+          <Purp><Cd>SALA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00404</InstrId>
+            <EndToEndId>E2E-20250923-00404</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="AUD">108761.34</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>IRCEIE2DXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Northern Energy SAS</Nm>
+            <PstlAdr>
+              <StrtNm>O'Connell Street</StrtNm>
+              <BldgNb>62</BldgNb>
+              <TwnNm>Dublin</TwnNm>
+              <Ctry>IE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IE8938144687221465433272</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0404</Ustrd></RmtInf>
+          <Purp><Cd>LOAN</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00405</InstrId>
+            <EndToEndId>E2E-20250923-00405</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CHF">8689.00</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>ICRAITRRXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Emma Murphy</Nm>
+            <PstlAdr>
+              <StrtNm>Via Roma</StrtNm>
+              <BldgNb>254</BldgNb>
+              <TwnNm>Roma</TwnNm>
+              <Ctry>IT</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IT7103908547932736715544</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0405</Ustrd></RmtInf>
+          <Purp><Cd>SUPP</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00406</InstrId>
+            <EndToEndId>E2E-20250923-00406</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="JPY">7337.66</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BCITITMMXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Green Pharma Inc</Nm>
+            <PstlAdr>
+              <StrtNm>Via Roma</StrtNm>
+              <BldgNb>733</BldgNb>
+              <TwnNm>Roma</TwnNm>
+              <Ctry>IT</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IT6609957501160057886842</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0406</Ustrd></RmtInf>
+          <Purp><Cd>EDUC</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00407</InstrId>
+            <EndToEndId>E2E-20250923-00407</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">13809.29</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>RABONL2UXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Lars Johansson</Nm>
+            <PstlAdr>
+              <StrtNm>Damrak</StrtNm>
+              <BldgNb>643</BldgNb>
+              <TwnNm>Amsterdam</TwnNm>
+              <Ctry>NL</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>NL3826915431350307141868</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0407</Ustrd></RmtInf>
+          <Purp><Cd>SUPP</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00408</InstrId>
+            <EndToEndId>E2E-20250923-00408</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CAD">12820.10</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BNPAFRPPXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Green Holdings Inc</Nm>
+            <PstlAdr>
+              <StrtNm>Avenue de Paris</StrtNm>
+              <BldgNb>831</BldgNb>
+              <TwnNm>Paris</TwnNm>
+              <Ctry>FR</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>FR9116191073272369144860</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0408</Ustrd></RmtInf>
+          <Purp><Cd>SALA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00409</InstrId>
+            <EndToEndId>E2E-20250923-00409</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CHF">8745.79</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>CHASUS33XXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Atlantic Pharma plc</Nm>
+            <PstlAdr>
+              <StrtNm>Main Avenue</StrtNm>
+              <BldgNb>80</BldgNb>
+              <TwnNm>New York</TwnNm>
+              <Ctry>US</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>US4150396698729722838151</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0409</Ustrd></RmtInf>
+          <Purp><Cd>GOVT</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00410</InstrId>
+            <EndToEndId>E2E-20250923-00410</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">5835.90</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>HANDSESSXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Vertex Retail Inc</Nm>
+            <PstlAdr>
+              <StrtNm>Kungsgatan</StrtNm>
+              <BldgNb>523</BldgNb>
+              <TwnNm>Stockholm</TwnNm>
+              <Ctry>SE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>SE5784671042493841528507</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0410</Ustrd></RmtInf>
+          <Purp><Cd>SUPP</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00411</InstrId>
+            <EndToEndId>E2E-20250923-00411</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">134.97</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BOFAUS3NXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Blue Automotive BV</Nm>
+            <PstlAdr>
+              <StrtNm>Main Avenue</StrtNm>
+              <BldgNb>289</BldgNb>
+              <TwnNm>New York</TwnNm>
+              <Ctry>US</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>US9072438739081855655475</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0411</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00412</InstrId>
+            <EndToEndId>E2E-20250923-00412</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="AUD">20619.04</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BSABESBBXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Global Holdings SpA</Nm>
+            <PstlAdr>
+              <StrtNm>Gran Via</StrtNm>
+              <BldgNb>457</BldgNb>
+              <TwnNm>Madrid</TwnNm>
+              <Ctry>ES</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>ES8113638251535740324559</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0412</Ustrd></RmtInf>
+          <Purp><Cd>SERV</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00413</InstrId>
+            <EndToEndId>E2E-20250923-00413</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="AUD">154498.96</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>SWEDSESSXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Vertex Retail SRL</Nm>
+            <PstlAdr>
+              <StrtNm>Kungsgatan</StrtNm>
+              <BldgNb>482</BldgNb>
+              <TwnNm>Stockholm</TwnNm>
+              <Ctry>SE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>SE8945721305386954698968</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0413</Ustrd></RmtInf>
+          <Purp><Cd>EDUC</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00414</InstrId>
+            <EndToEndId>E2E-20250923-00414</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="JPY">5464.53</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>CRESCHZZ80A</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Rapid Logistics SA</Nm>
+            <PstlAdr>
+              <StrtNm>Bahnhofstrasse</StrtNm>
+              <BldgNb>804</BldgNb>
+              <TwnNm>Zurich</TwnNm>
+              <Ctry>CH</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>CH4837890846284809218804</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0414</Ustrd></RmtInf>
+          <Purp><Cd>LOAN</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00415</InstrId>
+            <EndToEndId>E2E-20250923-00415</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">3176.94</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>POFICHBEXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>John Murphy</Nm>
+            <PstlAdr>
+              <StrtNm>Bahnhofstrasse</StrtNm>
+              <BldgNb>522</BldgNb>
+              <TwnNm>Zurich</TwnNm>
+              <Ctry>CH</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>CH6586771741212160694839</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0415</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00416</InstrId>
+            <EndToEndId>E2E-20250923-00416</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">9400.77</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BOFIIE2DXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Euro Metals Inc</Nm>
+            <PstlAdr>
+              <StrtNm>O'Connell Street</StrtNm>
+              <BldgNb>145</BldgNb>
+              <TwnNm>Dublin</TwnNm>
+              <Ctry>IE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IE3947616024503565420431</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0416</Ustrd></RmtInf>
+          <Purp><Cd>SALA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00417</InstrId>
+            <EndToEndId>E2E-20250923-00417</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CHF">8591.40</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>HBUKGB4BXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Euro Systems SpA</Nm>
+            <PstlAdr>
+              <StrtNm>High Street</StrtNm>
+              <BldgNb>388</BldgNb>
+              <TwnNm>London</TwnNm>
+              <Ctry>GB</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>GB2237133353377222896297</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0417</Ustrd></RmtInf>
+          <Purp><Cd>DIVD</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00418</InstrId>
+            <EndToEndId>E2E-20250923-00418</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CHF">2932.50</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>ULSBIE2DXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Blue Foods BV</Nm>
+            <PstlAdr>
+              <StrtNm>O'Connell Street</StrtNm>
+              <BldgNb>154</BldgNb>
+              <TwnNm>Dublin</TwnNm>
+              <Ctry>IE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IE7344893378911957370152</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0418</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00419</InstrId>
+            <EndToEndId>E2E-20250923-00419</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">10184.16</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>CRESCHZZ80A</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Anna Weiss</Nm>
+            <PstlAdr>
+              <StrtNm>Bahnhofstrasse</StrtNm>
+              <BldgNb>740</BldgNb>
+              <TwnNm>Zurich</TwnNm>
+              <Ctry>CH</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>CH6308724378829874615635</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0419</Ustrd></RmtInf>
+          <Purp><Cd>PENS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00420</InstrId>
+            <EndToEndId>E2E-20250923-00420</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">9451.47</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>POFICHBEXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Quantum Finance GmbH</Nm>
+            <PstlAdr>
+              <StrtNm>Bahnhofstrasse</StrtNm>
+              <BldgNb>46</BldgNb>
+              <TwnNm>Zurich</TwnNm>
+              <Ctry>CH</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>CH3973895403569097299679</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0420</Ustrd></RmtInf>
+          <Purp><Cd>SUPP</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00421</InstrId>
+            <EndToEndId>E2E-20250923-00421</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">12069.66</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>POFICHBEXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Northern Energy GmbH</Nm>
+            <PstlAdr>
+              <StrtNm>Bahnhofstrasse</StrtNm>
+              <BldgNb>17</BldgNb>
+              <TwnNm>Zurich</TwnNm>
+              <Ctry>CH</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>CH8529322972646731713615</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0421</Ustrd></RmtInf>
+          <Purp><Cd>EDUC</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00422</InstrId>
+            <EndToEndId>E2E-20250923-00422</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="JPY">7039.14</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BPPIITRRXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Global Industries SA</Nm>
+            <PstlAdr>
+              <StrtNm>Via Roma</StrtNm>
+              <BldgNb>121</BldgNb>
+              <TwnNm>Roma</TwnNm>
+              <Ctry>IT</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IT3849636829103632570638</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0422</Ustrd></RmtInf>
+          <Purp><Cd>SUPP</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00423</InstrId>
+            <EndToEndId>E2E-20250923-00423</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">14855.59</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>HANDSESSXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Quantum Logistics GmbH</Nm>
+            <PstlAdr>
+              <StrtNm>Kungsgatan</StrtNm>
+              <BldgNb>391</BldgNb>
+              <TwnNm>Stockholm</TwnNm>
+              <Ctry>SE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>SE2625848192904065662997</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0423</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00424</InstrId>
+            <EndToEndId>E2E-20250923-00424</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="USD">5122.98</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>POFICHBEXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Pacific Pharma LLC</Nm>
+            <PstlAdr>
+              <StrtNm>Bahnhofstrasse</StrtNm>
+              <BldgNb>460</BldgNb>
+              <TwnNm>Zurich</TwnNm>
+              <Ctry>CH</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>CH7322478535905736147346</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0424</Ustrd></RmtInf>
+          <Purp><Cd>PENS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00425</InstrId>
+            <EndToEndId>E2E-20250923-00425</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="AUD">182923.31</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>AGRIFRPPXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Peter Smith</Nm>
+            <PstlAdr>
+              <StrtNm>Avenue de Paris</StrtNm>
+              <BldgNb>415</BldgNb>
+              <TwnNm>Paris</TwnNm>
+              <Ctry>FR</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>FR7686668336488801150226</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0425</Ustrd></RmtInf>
+          <Purp><Cd>GOVT</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00426</InstrId>
+            <EndToEndId>E2E-20250923-00426</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CAD">138.54</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>SWEDSESSXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Swift Finance SAS</Nm>
+            <PstlAdr>
+              <StrtNm>Kungsgatan</StrtNm>
+              <BldgNb>98</BldgNb>
+              <TwnNm>Stockholm</TwnNm>
+              <Ctry>SE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>SE5327988803206105144434</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0426</Ustrd></RmtInf>
+          <Purp><Cd>GOVT</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00427</InstrId>
+            <EndToEndId>E2E-20250923-00427</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CAD">11068.26</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>LOYDGB2LXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Euro Automotive SAS</Nm>
+            <PstlAdr>
+              <StrtNm>High Street</StrtNm>
+              <BldgNb>334</BldgNb>
+              <TwnNm>London</TwnNm>
+              <Ctry>GB</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>GB4499748203885936223344</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0427</Ustrd></RmtInf>
+          <Purp><Cd>LOAN</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00428</InstrId>
+            <EndToEndId>E2E-20250923-00428</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CAD">6857.09</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>HBUKGB4BXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Global Energy Ltd</Nm>
+            <PstlAdr>
+              <StrtNm>High Street</StrtNm>
+              <BldgNb>87</BldgNb>
+              <TwnNm>London</TwnNm>
+              <Ctry>GB</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>GB6291603064041736628759</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0428</Ustrd></RmtInf>
+          <Purp><Cd>GOVT</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00429</InstrId>
+            <EndToEndId>E2E-20250923-00429</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CAD">12405.28</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>UNCRITMMXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Omega Foods Ltd</Nm>
+            <PstlAdr>
+              <StrtNm>Via Roma</StrtNm>
+              <BldgNb>248</BldgNb>
+              <TwnNm>Roma</TwnNm>
+              <Ctry>IT</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IT4856544530657507287087</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0429</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00430</InstrId>
+            <EndToEndId>E2E-20250923-00430</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">5789.16</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>ABNANL2AXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Global Tech Ltd</Nm>
+            <PstlAdr>
+              <StrtNm>Damrak</StrtNm>
+              <BldgNb>20</BldgNb>
+              <TwnNm>Amsterdam</TwnNm>
+              <Ctry>NL</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>NL8875551486146624021511</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0430</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00431</InstrId>
+            <EndToEndId>E2E-20250923-00431</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="USD">1524770.80</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>NOVAPTPLXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Paulo Garcia</Nm>
+            <PstlAdr>
+              <StrtNm>Avenida Central</StrtNm>
+              <BldgNb>362</BldgNb>
+              <TwnNm>Lisboa</TwnNm>
+              <Ctry>PT</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>PT5143167767348467040052</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0431</Ustrd></RmtInf>
+          <Purp><Cd>SALA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00432</InstrId>
+            <EndToEndId>E2E-20250923-00432</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">13523.89</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>AIBKIE2DXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Summit Consulting SpA</Nm>
+            <PstlAdr>
+              <StrtNm>O'Connell Street</StrtNm>
+              <BldgNb>567</BldgNb>
+              <TwnNm>Dublin</TwnNm>
+              <Ctry>IE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IE8987805327648005558831</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0432</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00433</InstrId>
+            <EndToEndId>E2E-20250923-00433</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CHF">8500.90</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>RABONL2UXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Quantum Logistics plc</Nm>
+            <PstlAdr>
+              <StrtNm>Damrak</StrtNm>
+              <BldgNb>677</BldgNb>
+              <TwnNm>Amsterdam</TwnNm>
+              <Ctry>NL</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>NL3711427664663371336179</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0433</Ustrd></RmtInf>
+          <Purp><Cd>SERV</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00434</InstrId>
+            <EndToEndId>E2E-20250923-00434</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CAD">727.27</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BNPAFRPPXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Summit Retail GmbH</Nm>
+            <PstlAdr>
+              <StrtNm>Avenue de Paris</StrtNm>
+              <BldgNb>493</BldgNb>
+              <TwnNm>Paris</TwnNm>
+              <Ctry>FR</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>FR1298080413419889833503</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0434</Ustrd></RmtInf>
+          <Purp><Cd>DIVD</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00435</InstrId>
+            <EndToEndId>E2E-20250923-00435</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="AUD">4918.83</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>SWEDSESSXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Summit Tech LLC</Nm>
+            <PstlAdr>
+              <StrtNm>Kungsgatan</StrtNm>
+              <BldgNb>886</BldgNb>
+              <TwnNm>Stockholm</TwnNm>
+              <Ctry>SE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>SE7982569778567123041563</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0435</Ustrd></RmtInf>
+          <Purp><Cd>SERV</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00436</InstrId>
+            <EndToEndId>E2E-20250923-00436</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CHF">11109.13</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>DEUTDEFFXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Pacific Metals plc</Nm>
+            <PstlAdr>
+              <StrtNm>Musterstrasse</StrtNm>
+              <BldgNb>292</BldgNb>
+              <TwnNm>Berlin</TwnNm>
+              <Ctry>DE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>DE2213312615422010983423</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0436</Ustrd></RmtInf>
+          <Purp><Cd>SERV</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00437</InstrId>
+            <EndToEndId>E2E-20250923-00437</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="AUD">301389.68</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>SNSBNL2AXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Rapid Pharma Inc</Nm>
+            <PstlAdr>
+              <StrtNm>Damrak</StrtNm>
+              <BldgNb>821</BldgNb>
+              <TwnNm>Amsterdam</TwnNm>
+              <Ctry>NL</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>NL3323471651903902534373</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0437</Ustrd></RmtInf>
+          <Purp><Cd>PENS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00438</InstrId>
+            <EndToEndId>E2E-20250923-00438</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="AUD">200639.62</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>ESSESESSXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Green Systems GmbH</Nm>
+            <PstlAdr>
+              <StrtNm>Kungsgatan</StrtNm>
+              <BldgNb>854</BldgNb>
+              <TwnNm>Stockholm</TwnNm>
+              <Ctry>SE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>SE6598464280913913042627</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0438</Ustrd></RmtInf>
+          <Purp><Cd>PENS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00439</InstrId>
+            <EndToEndId>E2E-20250923-00439</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CHF">11565.29</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>HBUKGB4BXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Nina Murphy</Nm>
+            <PstlAdr>
+              <StrtNm>High Street</StrtNm>
+              <BldgNb>254</BldgNb>
+              <TwnNm>London</TwnNm>
+              <Ctry>GB</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>GB7095324627009450689064</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0439</Ustrd></RmtInf>
+          <Purp><Cd>ROYA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00440</InstrId>
+            <EndToEndId>E2E-20250923-00440</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="JPY">14895.34</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>SOGEFRPPXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Ines Keller</Nm>
+            <PstlAdr>
+              <StrtNm>Avenue de Paris</StrtNm>
+              <BldgNb>951</BldgNb>
+              <TwnNm>Paris</TwnNm>
+              <Ctry>FR</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>FR1422531612220641879966</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0440</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00441</InstrId>
+            <EndToEndId>E2E-20250923-00441</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="USD">11924.97</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>NDEASESSXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Northern Industries plc</Nm>
+            <PstlAdr>
+              <StrtNm>Kungsgatan</StrtNm>
+              <BldgNb>876</BldgNb>
+              <TwnNm>Stockholm</TwnNm>
+              <Ctry>SE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>SE8222024424813553385424</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0441</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00442</InstrId>
+            <EndToEndId>E2E-20250923-00442</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">7094.81</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BNPAFRPPXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Marco Keller</Nm>
+            <PstlAdr>
+              <StrtNm>Avenue de Paris</StrtNm>
+              <BldgNb>916</BldgNb>
+              <TwnNm>Paris</TwnNm>
+              <Ctry>FR</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>FR3377358856580901759107</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0442</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00443</InstrId>
+            <EndToEndId>E2E-20250923-00443</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="AUD">14426.81</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>POFICHBEXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Omar Silva</Nm>
+            <PstlAdr>
+              <StrtNm>Bahnhofstrasse</StrtNm>
+              <BldgNb>589</BldgNb>
+              <TwnNm>Zurich</TwnNm>
+              <Ctry>CH</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>CH1285631354342498349208</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0443</Ustrd></RmtInf>
+          <Purp><Cd>DIVD</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00444</InstrId>
+            <EndToEndId>E2E-20250923-00444</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="USD">81846.51</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>LOYDGB2LXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Apex Media Ltd</Nm>
+            <PstlAdr>
+              <StrtNm>High Street</StrtNm>
+              <BldgNb>456</BldgNb>
+              <TwnNm>London</TwnNm>
+              <Ctry>GB</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>GB2390488221494917576924</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0444</Ustrd></RmtInf>
+          <Purp><Cd>LOAN</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00445</InstrId>
+            <EndToEndId>E2E-20250923-00445</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="SEK">6525.25</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>NDEASESSXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Vertex Metals SpA</Nm>
+            <PstlAdr>
+              <StrtNm>Kungsgatan</StrtNm>
+              <BldgNb>700</BldgNb>
+              <TwnNm>Stockholm</TwnNm>
+              <Ctry>SE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>SE5984602711244607982646</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0445</Ustrd></RmtInf>
+          <Purp><Cd>SUPP</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00446</InstrId>
+            <EndToEndId>E2E-20250923-00446</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">8434.98</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BOFAUS3NXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Ines Costa</Nm>
+            <PstlAdr>
+              <StrtNm>Main Avenue</StrtNm>
+              <BldgNb>706</BldgNb>
+              <TwnNm>New York</TwnNm>
+              <Ctry>US</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>US7425335853670177493474</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0446</Ustrd></RmtInf>
+          <Purp><Cd>PENS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00447</InstrId>
+            <EndToEndId>E2E-20250923-00447</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CAD">8823.30</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BCOEESMMXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Noah Garcia</Nm>
+            <PstlAdr>
+              <StrtNm>Gran Via</StrtNm>
+              <BldgNb>527</BldgNb>
+              <TwnNm>Madrid</TwnNm>
+              <Ctry>ES</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>ES7203822908020115156302</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0447</Ustrd></RmtInf>
+          <Purp><Cd>LOAN</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00448</InstrId>
+            <EndToEndId>E2E-20250923-00448</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="USD">12836.13</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>SWEDSESSXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Omega Media Inc</Nm>
+            <PstlAdr>
+              <StrtNm>Kungsgatan</StrtNm>
+              <BldgNb>622</BldgNb>
+              <TwnNm>Stockholm</TwnNm>
+              <Ctry>SE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>SE1441357880209944753152</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0448</Ustrd></RmtInf>
+          <Purp><Cd>SUPP</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00449</InstrId>
+            <EndToEndId>E2E-20250923-00449</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">14822.27</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>ESSESESSXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Atlantic Retail SpA</Nm>
+            <PstlAdr>
+              <StrtNm>Kungsgatan</StrtNm>
+              <BldgNb>37</BldgNb>
+              <TwnNm>Stockholm</TwnNm>
+              <Ctry>SE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>SE1075028715953001438271</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0449</Ustrd></RmtInf>
+          <Purp><Cd>SUPP</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00450</InstrId>
+            <EndToEndId>E2E-20250923-00450</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="USD">5134.28</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BESCPTPLXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Yu Tanaka</Nm>
+            <PstlAdr>
+              <StrtNm>Avenida Central</StrtNm>
+              <BldgNb>715</BldgNb>
+              <TwnNm>Lisboa</TwnNm>
+              <Ctry>PT</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>PT4092441806611254022794</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0450</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00451</InstrId>
+            <EndToEndId>E2E-20250923-00451</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">6507.24</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BOFIIE2DXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Rapid Consulting SA</Nm>
+            <PstlAdr>
+              <StrtNm>O'Connell Street</StrtNm>
+              <BldgNb>784</BldgNb>
+              <TwnNm>Dublin</TwnNm>
+              <Ctry>IE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IE2231185898982131714817</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0451</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00452</InstrId>
+            <EndToEndId>E2E-20250923-00452</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="USD">49167.84</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>UNCRITMMXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Nova Tech SA</Nm>
+            <PstlAdr>
+              <StrtNm>Via Roma</StrtNm>
+              <BldgNb>733</BldgNb>
+              <TwnNm>Roma</TwnNm>
+              <Ctry>IT</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IT8221060972206544700348</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0452</Ustrd></RmtInf>
+          <Purp><Cd>SUPP</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00453</InstrId>
+            <EndToEndId>E2E-20250923-00453</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="SEK">1676.95</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BCITITMMXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Swift Systems SRL</Nm>
+            <PstlAdr>
+              <StrtNm>Via Roma</StrtNm>
+              <BldgNb>67</BldgNb>
+              <TwnNm>Roma</TwnNm>
+              <Ctry>IT</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IT3727252278429383973305</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0453</Ustrd></RmtInf>
+          <Purp><Cd>SALA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00454</InstrId>
+            <EndToEndId>E2E-20250923-00454</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">13565.42</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>CHASUS33XXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Ken Johansson</Nm>
+            <PstlAdr>
+              <StrtNm>Main Avenue</StrtNm>
+              <BldgNb>858</BldgNb>
+              <TwnNm>New York</TwnNm>
+              <Ctry>US</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>US8431963756098737461012</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0454</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00455</InstrId>
+            <EndToEndId>E2E-20250923-00455</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">2015.10</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>AIBKIE2DXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Pacific Pharma Inc</Nm>
+            <PstlAdr>
+              <StrtNm>O'Connell Street</StrtNm>
+              <BldgNb>590</BldgNb>
+              <TwnNm>Dublin</TwnNm>
+              <Ctry>IE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IE6404085359230280593242</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0455</Ustrd></RmtInf>
+          <Purp><Cd>SALA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00456</InstrId>
+            <EndToEndId>E2E-20250923-00456</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">11910.73</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>SNSBNL2AXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Summit Tech GmbH</Nm>
+            <PstlAdr>
+              <StrtNm>Damrak</StrtNm>
+              <BldgNb>435</BldgNb>
+              <TwnNm>Amsterdam</TwnNm>
+              <Ctry>NL</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>NL8191258031363682464854</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0456</Ustrd></RmtInf>
+          <Purp><Cd>PENS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00457</InstrId>
+            <EndToEndId>E2E-20250923-00457</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="JPY">11685.36</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>IRCEIE2DXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Noah Keller</Nm>
+            <PstlAdr>
+              <StrtNm>O'Connell Street</StrtNm>
+              <BldgNb>995</BldgNb>
+              <TwnNm>Dublin</TwnNm>
+              <Ctry>IE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IE4596256116483322562689</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0457</Ustrd></RmtInf>
+          <Purp><Cd>DIVD</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00458</InstrId>
+            <EndToEndId>E2E-20250923-00458</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="USD">219682.13</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BBVAESMMXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Pacific Energy SA</Nm>
+            <PstlAdr>
+              <StrtNm>Gran Via</StrtNm>
+              <BldgNb>518</BldgNb>
+              <TwnNm>Madrid</TwnNm>
+              <Ctry>ES</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>ES2010723716838293747934</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0458</Ustrd></RmtInf>
+          <Purp><Cd>EDUC</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00459</InstrId>
+            <EndToEndId>E2E-20250923-00459</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">151085.22</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>IRCEIE2DXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Apex Finance SpA</Nm>
+            <PstlAdr>
+              <StrtNm>O'Connell Street</StrtNm>
+              <BldgNb>346</BldgNb>
+              <TwnNm>Dublin</TwnNm>
+              <Ctry>IE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IE6809584228361231879640</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0459</Ustrd></RmtInf>
+          <Purp><Cd>SERV</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00460</InstrId>
+            <EndToEndId>E2E-20250923-00460</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="JPY">14789.04</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BESCPTPLXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Northern Systems LLC</Nm>
+            <PstlAdr>
+              <StrtNm>Avenida Central</StrtNm>
+              <BldgNb>645</BldgNb>
+              <TwnNm>Lisboa</TwnNm>
+              <Ctry>PT</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>PT5930616481498986525265</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0460</Ustrd></RmtInf>
+          <Purp><Cd>PENS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00461</InstrId>
+            <EndToEndId>E2E-20250923-00461</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CAD">4065.77</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>ICRAITRRXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Emma Rossi</Nm>
+            <PstlAdr>
+              <StrtNm>Via Roma</StrtNm>
+              <BldgNb>623</BldgNb>
+              <TwnNm>Roma</TwnNm>
+              <Ctry>IT</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IT1438595273247950508711</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0461</Ustrd></RmtInf>
+          <Purp><Cd>PENS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00462</InstrId>
+            <EndToEndId>E2E-20250923-00462</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="USD">226814.30</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BNPAFRPPXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Quantum Metals BV</Nm>
+            <PstlAdr>
+              <StrtNm>Avenue de Paris</StrtNm>
+              <BldgNb>918</BldgNb>
+              <TwnNm>Paris</TwnNm>
+              <Ctry>FR</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>FR2999628754672282651806</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0462</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00463</InstrId>
+            <EndToEndId>E2E-20250923-00463</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="SEK">7364.40</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>AGRIFRPPXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Global Logistics LLC</Nm>
+            <PstlAdr>
+              <StrtNm>Avenue de Paris</StrtNm>
+              <BldgNb>587</BldgNb>
+              <TwnNm>Paris</TwnNm>
+              <Ctry>FR</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>FR5151357583342857001616</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0463</Ustrd></RmtInf>
+          <Purp><Cd>SERV</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00464</InstrId>
+            <EndToEndId>E2E-20250923-00464</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="USD">1797350.78</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>SNSBNL2AXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Nova Retail SpA</Nm>
+            <PstlAdr>
+              <StrtNm>Damrak</StrtNm>
+              <BldgNb>615</BldgNb>
+              <TwnNm>Amsterdam</TwnNm>
+              <Ctry>NL</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>NL3325866869409651453160</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0464</Ustrd></RmtInf>
+          <Purp><Cd>SERV</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00465</InstrId>
+            <EndToEndId>E2E-20250923-00465</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="USD">7137.55</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>NWBKGB2LXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Apex Consulting SRL</Nm>
+            <PstlAdr>
+              <StrtNm>High Street</StrtNm>
+              <BldgNb>42</BldgNb>
+              <TwnNm>London</TwnNm>
+              <Ctry>GB</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>GB5246158137853557422450</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0465</Ustrd></RmtInf>
+          <Purp><Cd>SUPP</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00466</InstrId>
+            <EndToEndId>E2E-20250923-00466</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">2311.44</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>WFBIUS6SXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Euro Aerospace GmbH</Nm>
+            <PstlAdr>
+              <StrtNm>Main Avenue</StrtNm>
+              <BldgNb>31</BldgNb>
+              <TwnNm>New York</TwnNm>
+              <Ctry>US</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>US4825642221706158669738</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0466</Ustrd></RmtInf>
+          <Purp><Cd>SALA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00467</InstrId>
+            <EndToEndId>E2E-20250923-00467</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CHF">6795.18</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>CITIUS33XXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Quantum Automotive LLC</Nm>
+            <PstlAdr>
+              <StrtNm>Main Avenue</StrtNm>
+              <BldgNb>62</BldgNb>
+              <TwnNm>New York</TwnNm>
+              <Ctry>US</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>US5472943678881418133276</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0467</Ustrd></RmtInf>
+          <Purp><Cd>EDUC</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00468</InstrId>
+            <EndToEndId>E2E-20250923-00468</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">9860.82</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BYLADEM1001</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Rapid Retail SAS</Nm>
+            <PstlAdr>
+              <StrtNm>Musterstrasse</StrtNm>
+              <BldgNb>397</BldgNb>
+              <TwnNm>Berlin</TwnNm>
+              <Ctry>DE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>DE5818885121216616139610</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0468</Ustrd></RmtInf>
+          <Purp><Cd>SALA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00469</InstrId>
+            <EndToEndId>E2E-20250923-00469</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">2852.97</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>CAIXESBBXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Rapid Pharma SAS</Nm>
+            <PstlAdr>
+              <StrtNm>Gran Via</StrtNm>
+              <BldgNb>815</BldgNb>
+              <TwnNm>Madrid</TwnNm>
+              <Ctry>ES</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>ES7720919166544924097960</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0469</Ustrd></RmtInf>
+          <Purp><Cd>SERV</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00470</InstrId>
+            <EndToEndId>E2E-20250923-00470</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="JPY">14978.46</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BNPAFRPPXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>City Council Dublin</Nm>
+            <PstlAdr>
+              <StrtNm>Avenue de Paris</StrtNm>
+              <BldgNb>966</BldgNb>
+              <TwnNm>Paris</TwnNm>
+              <Ctry>FR</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>FR4332167728903317809070</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0470</Ustrd></RmtInf>
+          <Purp><Cd>GOVT</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00471</InstrId>
+            <EndToEndId>E2E-20250923-00471</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">9143.88</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>HYVEDEMMXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Apex Automotive plc</Nm>
+            <PstlAdr>
+              <StrtNm>Musterstrasse</StrtNm>
+              <BldgNb>461</BldgNb>
+              <TwnNm>Berlin</TwnNm>
+              <Ctry>DE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>DE7414434906666908401659</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0471</Ustrd></RmtInf>
+          <Purp><Cd>EDUC</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00472</InstrId>
+            <EndToEndId>E2E-20250923-00472</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="SEK">94226.27</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>UNCRITMMXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Atlantic Energy SAS</Nm>
+            <PstlAdr>
+              <StrtNm>Via Roma</StrtNm>
+              <BldgNb>846</BldgNb>
+              <TwnNm>Roma</TwnNm>
+              <Ctry>IT</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IT3375367572594598156296</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0472</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00473</InstrId>
+            <EndToEndId>E2E-20250923-00473</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">13753.83</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>CRESCHZZ80A</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Public Hospital Dublin</Nm>
+            <PstlAdr>
+              <StrtNm>Bahnhofstrasse</StrtNm>
+              <BldgNb>522</BldgNb>
+              <TwnNm>Zurich</TwnNm>
+              <Ctry>CH</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>CH3755517159064670187488</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0473</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00474</InstrId>
+            <EndToEndId>E2E-20250923-00474</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">9734.30</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>RABONL2UXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Quantum Systems Ltd</Nm>
+            <PstlAdr>
+              <StrtNm>Damrak</StrtNm>
+              <BldgNb>116</BldgNb>
+              <TwnNm>Amsterdam</TwnNm>
+              <Ctry>NL</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>NL3349981685701167808524</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0474</Ustrd></RmtInf>
+          <Purp><Cd>ROYA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00475</InstrId>
+            <EndToEndId>E2E-20250923-00475</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="JPY">9125.93</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>ULSBIE2DXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Yu Berg</Nm>
+            <PstlAdr>
+              <StrtNm>O'Connell Street</StrtNm>
+              <BldgNb>979</BldgNb>
+              <TwnNm>Dublin</TwnNm>
+              <Ctry>IE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IE4091532068784834992426</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0475</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00476</InstrId>
+            <EndToEndId>E2E-20250923-00476</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CAD">124788.52</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>HBUKGB4BXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Quantum Aerospace SpA</Nm>
+            <PstlAdr>
+              <StrtNm>High Street</StrtNm>
+              <BldgNb>484</BldgNb>
+              <TwnNm>London</TwnNm>
+              <Ctry>GB</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>GB7997692781647072538230</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0476</Ustrd></RmtInf>
+          <Purp><Cd>PENS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00477</InstrId>
+            <EndToEndId>E2E-20250923-00477</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="USD">1358100.71</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BSABESBBXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Sofia Ibrahim</Nm>
+            <PstlAdr>
+              <StrtNm>Gran Via</StrtNm>
+              <BldgNb>670</BldgNb>
+              <TwnNm>Madrid</TwnNm>
+              <Ctry>ES</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>ES7728410131599790834414</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0477</Ustrd></RmtInf>
+          <Purp><Cd>DIVD</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00478</InstrId>
+            <EndToEndId>E2E-20250923-00478</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CHF">10523.73</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>AIBKIE2DXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Quantum Consulting SRL</Nm>
+            <PstlAdr>
+              <StrtNm>O'Connell Street</StrtNm>
+              <BldgNb>202</BldgNb>
+              <TwnNm>Dublin</TwnNm>
+              <Ctry>IE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IE5146647083818108160496</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0478</Ustrd></RmtInf>
+          <Purp><Cd>EDUC</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00479</InstrId>
+            <EndToEndId>E2E-20250923-00479</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="JPY">120346.17</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>ICRAITRRXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Swift Consulting GmbH</Nm>
+            <PstlAdr>
+              <StrtNm>Via Roma</StrtNm>
+              <BldgNb>176</BldgNb>
+              <TwnNm>Roma</TwnNm>
+              <Ctry>IT</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IT3179737911881034090167</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0479</Ustrd></RmtInf>
+          <Purp><Cd>SALA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00480</InstrId>
+            <EndToEndId>E2E-20250923-00480</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="USD">2608.14</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>LOYDGB2LXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>John Khan</Nm>
+            <PstlAdr>
+              <StrtNm>High Street</StrtNm>
+              <BldgNb>159</BldgNb>
+              <TwnNm>London</TwnNm>
+              <Ctry>GB</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>GB5488006882839559928232</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0480</Ustrd></RmtInf>
+          <Purp><Cd>SUPP</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00481</InstrId>
+            <EndToEndId>E2E-20250923-00481</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">74792.81</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>RABONL2UXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Nova Foods SpA</Nm>
+            <PstlAdr>
+              <StrtNm>Damrak</StrtNm>
+              <BldgNb>566</BldgNb>
+              <TwnNm>Amsterdam</TwnNm>
+              <Ctry>NL</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>NL6113163050783709401409</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0481</Ustrd></RmtInf>
+          <Purp><Cd>PENS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00482</InstrId>
+            <EndToEndId>E2E-20250923-00482</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="USD">4620.05</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>ESSESESSXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Eva Murphy</Nm>
+            <PstlAdr>
+              <StrtNm>Kungsgatan</StrtNm>
+              <BldgNb>872</BldgNb>
+              <TwnNm>Stockholm</TwnNm>
+              <Ctry>SE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>SE8425639548388800597110</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0482</Ustrd></RmtInf>
+          <Purp><Cd>LOAN</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00483</InstrId>
+            <EndToEndId>E2E-20250923-00483</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="JPY">1937.95</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>CAIXESBBXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Omega Media Inc</Nm>
+            <PstlAdr>
+              <StrtNm>Gran Via</StrtNm>
+              <BldgNb>484</BldgNb>
+              <TwnNm>Madrid</TwnNm>
+              <Ctry>ES</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>ES3916253869950176059361</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0483</Ustrd></RmtInf>
+          <Purp><Cd>SUPP</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00484</InstrId>
+            <EndToEndId>E2E-20250923-00484</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">6981.83</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>ESSESESSXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Apex Consulting plc</Nm>
+            <PstlAdr>
+              <StrtNm>Kungsgatan</StrtNm>
+              <BldgNb>522</BldgNb>
+              <TwnNm>Stockholm</TwnNm>
+              <Ctry>SE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>SE9679856422894625247697</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0484</Ustrd></RmtInf>
+          <Purp><Cd>ROYA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00485</InstrId>
+            <EndToEndId>E2E-20250923-00485</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">3298.78</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>ABNANL2AXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Vertex Retail BV</Nm>
+            <PstlAdr>
+              <StrtNm>Damrak</StrtNm>
+              <BldgNb>394</BldgNb>
+              <TwnNm>Amsterdam</TwnNm>
+              <Ctry>NL</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>NL9363388417802990691728</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0485</Ustrd></RmtInf>
+          <Purp><Cd>DIVD</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00486</InstrId>
+            <EndToEndId>E2E-20250923-00486</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="JPY">5593.69</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>AIBKIE2DXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Summit Foods SAS</Nm>
+            <PstlAdr>
+              <StrtNm>O'Connell Street</StrtNm>
+              <BldgNb>831</BldgNb>
+              <TwnNm>Dublin</TwnNm>
+              <Ctry>IE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IE3450314158105055498807</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0486</Ustrd></RmtInf>
+          <Purp><Cd>ROYA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00487</InstrId>
+            <EndToEndId>E2E-20250923-00487</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="AUD">5321.64</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>NDEASESSXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Sofia Tanaka</Nm>
+            <PstlAdr>
+              <StrtNm>Kungsgatan</StrtNm>
+              <BldgNb>672</BldgNb>
+              <TwnNm>Stockholm</TwnNm>
+              <Ctry>SE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>SE6892500994370104217441</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0487</Ustrd></RmtInf>
+          <Purp><Cd>SERV</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00488</InstrId>
+            <EndToEndId>E2E-20250923-00488</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">10906.41</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>HYVEDEMMXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Global Industries SA</Nm>
+            <PstlAdr>
+              <StrtNm>Musterstrasse</StrtNm>
+              <BldgNb>633</BldgNb>
+              <TwnNm>Berlin</TwnNm>
+              <Ctry>DE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>DE6845102940163646951793</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0488</Ustrd></RmtInf>
+          <Purp><Cd>DIVD</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00489</InstrId>
+            <EndToEndId>E2E-20250923-00489</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">4709.76</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>CGDIPTPLXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Global Media SA</Nm>
+            <PstlAdr>
+              <StrtNm>Avenida Central</StrtNm>
+              <BldgNb>608</BldgNb>
+              <TwnNm>Lisboa</TwnNm>
+              <Ctry>PT</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>PT8985990797356872707417</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0489</Ustrd></RmtInf>
+          <Purp><Cd>DIVD</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00490</InstrId>
+            <EndToEndId>E2E-20250923-00490</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="AUD">6139.70</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BNPAFRPPXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Euro Systems plc</Nm>
+            <PstlAdr>
+              <StrtNm>Avenue de Paris</StrtNm>
+              <BldgNb>65</BldgNb>
+              <TwnNm>Paris</TwnNm>
+              <Ctry>FR</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>FR7722693875300784375467</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0490</Ustrd></RmtInf>
+          <Purp><Cd>SERV</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00491</InstrId>
+            <EndToEndId>E2E-20250923-00491</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CAD">240514.19</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>CRESCHZZ80A</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Northern Systems SRL</Nm>
+            <PstlAdr>
+              <StrtNm>Bahnhofstrasse</StrtNm>
+              <BldgNb>164</BldgNb>
+              <TwnNm>Zurich</TwnNm>
+              <Ctry>CH</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>CH8201136221595513369454</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0491</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00492</InstrId>
+            <EndToEndId>E2E-20250923-00492</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="SEK">2831.28</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>AIBKIE2DXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Lars Khan</Nm>
+            <PstlAdr>
+              <StrtNm>O'Connell Street</StrtNm>
+              <BldgNb>831</BldgNb>
+              <TwnNm>Dublin</TwnNm>
+              <Ctry>IE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IE5146029783049977717360</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0492</Ustrd></RmtInf>
+          <Purp><Cd>PENS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00493</InstrId>
+            <EndToEndId>E2E-20250923-00493</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">14785.14</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BOFAUS3NXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Atlantic Energy BV</Nm>
+            <PstlAdr>
+              <StrtNm>Main Avenue</StrtNm>
+              <BldgNb>887</BldgNb>
+              <TwnNm>New York</TwnNm>
+              <Ctry>US</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>US8378509540444458599678</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0493</Ustrd></RmtInf>
+          <Purp><Cd>DIVD</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00494</InstrId>
+            <EndToEndId>E2E-20250923-00494</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">12603.53</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>SNSBNL2AXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Prime Pharma Inc</Nm>
+            <PstlAdr>
+              <StrtNm>Damrak</StrtNm>
+              <BldgNb>942</BldgNb>
+              <TwnNm>Amsterdam</TwnNm>
+              <Ctry>NL</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>NL7539708377072470253026</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0494</Ustrd></RmtInf>
+          <Purp><Cd>ROYA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00495</InstrId>
+            <EndToEndId>E2E-20250923-00495</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">29380.95</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>AGRIFRPPXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Prime Pharma Inc</Nm>
+            <PstlAdr>
+              <StrtNm>Avenue de Paris</StrtNm>
+              <BldgNb>128</BldgNb>
+              <TwnNm>Paris</TwnNm>
+              <Ctry>FR</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>FR5172693388129473362426</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0495</Ustrd></RmtInf>
+          <Purp><Cd>PENS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00496</InstrId>
+            <EndToEndId>E2E-20250923-00496</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">14759.28</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BPPIITRRXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Summit Holdings SAS</Nm>
+            <PstlAdr>
+              <StrtNm>Via Roma</StrtNm>
+              <BldgNb>357</BldgNb>
+              <TwnNm>Roma</TwnNm>
+              <Ctry>IT</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IT7791710783931981108805</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0496</Ustrd></RmtInf>
+          <Purp><Cd>PENS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00497</InstrId>
+            <EndToEndId>E2E-20250923-00497</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">11401.78</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>SOGEFRPPXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Summit Finance SpA</Nm>
+            <PstlAdr>
+              <StrtNm>Avenue de Paris</StrtNm>
+              <BldgNb>372</BldgNb>
+              <TwnNm>Paris</TwnNm>
+              <Ctry>FR</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>FR8064133562888923574098</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0497</Ustrd></RmtInf>
+          <Purp><Cd>ROYA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00498</InstrId>
+            <EndToEndId>E2E-20250923-00498</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CAD">8285.42</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BPPIITRRXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Swift Finance plc</Nm>
+            <PstlAdr>
+              <StrtNm>Via Roma</StrtNm>
+              <BldgNb>862</BldgNb>
+              <TwnNm>Roma</TwnNm>
+              <Ctry>IT</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>IT8481312123210696713841</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0498</Ustrd></RmtInf>
+          <Purp><Cd>EDUC</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00499</InstrId>
+            <EndToEndId>E2E-20250923-00499</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="SEK">90103.04</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>CHASUS33XXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Vertex Media SRL</Nm>
+            <PstlAdr>
+              <StrtNm>Main Avenue</StrtNm>
+              <BldgNb>639</BldgNb>
+              <TwnNm>New York</TwnNm>
+              <Ctry>US</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>US5271250597497572682262</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0499</Ustrd></RmtInf>
+          <Purp><Cd>SALA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00500</InstrId>
+            <EndToEndId>E2E-20250923-00500</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="JPY">3497.67</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>RAIFCH22XXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Customs Agency Stockholm</Nm>
+            <PstlAdr>
+              <StrtNm>Bahnhofstrasse</StrtNm>
+              <BldgNb>960</BldgNb>
+              <TwnNm>Zurich</TwnNm>
+              <Ctry>CH</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>CH6818077421571917354390</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0500</Ustrd></RmtInf>
+          <Purp><Cd>ROYA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00501</InstrId>
+            <EndToEndId>E2E-20250923-00501</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">12847.84</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>CRESCHZZ80A</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Rapid Foods SpA</Nm>
+            <PstlAdr>
+              <StrtNm>Bahnhofstrasse</StrtNm>
+              <BldgNb>845</BldgNb>
+              <TwnNm>Zurich</TwnNm>
+              <Ctry>CH</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>CH5848504655781523343506</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0501</Ustrd></RmtInf>
+          <Purp><Cd>SALA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00502</InstrId>
+            <EndToEndId>E2E-20250923-00502</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">2387.46</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>NOVAPTPLXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Summit Foods Ltd</Nm>
+            <PstlAdr>
+              <StrtNm>Avenida Central</StrtNm>
+              <BldgNb>720</BldgNb>
+              <TwnNm>Lisboa</TwnNm>
+              <Ctry>PT</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>PT5414510746386525641677</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0502</Ustrd></RmtInf>
+          <Purp><Cd>ROYA</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00503</InstrId>
+            <EndToEndId>E2E-20250923-00503</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">98437.87</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>ESSESESSXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Prime Systems BV</Nm>
+            <PstlAdr>
+              <StrtNm>Kungsgatan</StrtNm>
+              <BldgNb>150</BldgNb>
+              <TwnNm>Stockholm</TwnNm>
+              <Ctry>SE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>SE5506744507449216250493</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0503</Ustrd></RmtInf>
+          <Purp><Cd>LOAN</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00504</InstrId>
+            <EndToEndId>E2E-20250923-00504</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">141478.85</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>ESSESESSXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Lars Johansson</Nm>
+            <PstlAdr>
+              <StrtNm>Kungsgatan</StrtNm>
+              <BldgNb>748</BldgNb>
+              <TwnNm>Stockholm</TwnNm>
+              <Ctry>SE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>SE8257777494567037194514</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0504</Ustrd></RmtInf>
+          <Purp><Cd>DIVD</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00505</InstrId>
+            <EndToEndId>E2E-20250923-00505</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="SEK">11415.20</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>BARCGB22XXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Pacific Aerospace plc</Nm>
+            <PstlAdr>
+              <StrtNm>High Street</StrtNm>
+              <BldgNb>608</BldgNb>
+              <TwnNm>London</TwnNm>
+              <Ctry>GB</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>GB5240073496782214248890</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0505</Ustrd></RmtInf>
+          <Purp><Cd>LOAN</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00506</InstrId>
+            <EndToEndId>E2E-20250923-00506</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="EUR">703814.72</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>HYVEDEMMXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Ken Murphy</Nm>
+            <PstlAdr>
+              <StrtNm>Musterstrasse</StrtNm>
+              <BldgNb>205</BldgNb>
+              <TwnNm>Berlin</TwnNm>
+              <Ctry>DE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>DE6754778190485651985324</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0506</Ustrd></RmtInf>
+          <Purp><Cd>LOAN</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00507</InstrId>
+            <EndToEndId>E2E-20250923-00507</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="CHF">6398.86</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>CCFRFRPPXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Swift Aerospace Inc</Nm>
+            <PstlAdr>
+              <StrtNm>Avenue de Paris</StrtNm>
+              <BldgNb>963</BldgNb>
+              <TwnNm>Paris</TwnNm>
+              <Ctry>FR</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>FR9716851585301272026706</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0507</Ustrd></RmtInf>
+          <Purp><Cd>TAXS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00508</InstrId>
+            <EndToEndId>E2E-20250923-00508</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>URGP</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">9873.50</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_06</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>HYVEDEMMXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Lars Rossi</Nm>
+            <PstlAdr>
+              <StrtNm>Musterstrasse</StrtNm>
+              <BldgNb>277</BldgNb>
+              <TwnNm>Berlin</TwnNm>
+              <Ctry>DE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>DE2321248453157520889009</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0508</Ustrd></RmtInf>
+          <Purp><Cd>EDUC</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00509</InstrId>
+            <EndToEndId>E2E-20250923-00509</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="JPY">2414.01</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_07</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>NDEASESSXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Atlantic Retail BV</Nm>
+            <PstlAdr>
+              <StrtNm>Kungsgatan</StrtNm>
+              <BldgNb>8</BldgNb>
+              <TwnNm>Stockholm</TwnNm>
+              <Ctry>SE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>SE3263712369422066958839</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0509</Ustrd></RmtInf>
+          <Purp><Cd>SUPP</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00510</InstrId>
+            <EndToEndId>E2E-20250923-00510</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>NURG</Cd></SvcLvl>
+            <InstrPrty>NORM</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="SEK">6433.18</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Gov_Initiator_03_02</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>ACTVPTPLXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Nova Retail Ltd</Nm>
+            <PstlAdr>
+              <StrtNm>Avenida Central</StrtNm>
+              <BldgNb>74</BldgNb>
+              <TwnNm>Lisboa</TwnNm>
+              <Ctry>PT</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>PT5642512124141720528047</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0510</Ustrd></RmtInf>
+          <Purp><Cd>PENS</Cd></Purp>
+        </CdtTrfTxInf><CdtTrfTxInf>
+          <PmtId>
+            <InstrId>INST-20250923-00511</InstrId>
+            <EndToEndId>E2E-20250923-00511</EndToEndId>
+          </PmtId>
+          <PmtTpInf>
+            <SvcLvl><Cd>PRPT</Cd></SvcLvl>
+            <InstrPrty>HIGH</InstrPrty>
+          </PmtTpInf>
+          <Amt><InstdAmt Ccy="GBP">117370.75</InstdAmt></Amt>
+          <UltmtDbtr><Nm>Corp_Initiator_03_03</Nm></UltmtDbtr>
+          <CdtrAgt><FinInstnId><BIC>COBADEFFXXX</BIC></FinInstnId></CdtrAgt>
+          <Cdtr>
+            <Nm>Social Security Lisbon</Nm>
+            <PstlAdr>
+              <StrtNm>Musterstrasse</StrtNm>
+              <BldgNb>751</BldgNb>
+              <TwnNm>Berlin</TwnNm>
+              <Ctry>DE</Ctry>
+            </PstlAdr>
+          </Cdtr>
+          <CdtrAcct><Id><IBAN>DE3384098187642385814899</IBAN></Id></CdtrAcct>
+          <RmtInf><Ustrd>Ref 2025-09-0511</Ustrd></RmtInf>
+          <Purp><Cd>SUPP</Cd></Purp>
+        </CdtTrfTxInf></PmtInf></CstmrCdtTrfInitn></Document>
