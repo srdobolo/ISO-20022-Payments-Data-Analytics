@@ -1,39 +1,33 @@
-ISO 20022 Synthetic Dataset (Version .001.09)
+ISO 20022 Enhanced Heavy-Load Synthetic Dataset (.001.09)
 
-Structure (grouped per day):
-  YYYY-MM-DD/
-    pain001_YYYY-MM-DD.xml (pain.001.001.09)
-    pacs008_YYYY-MM-DD.xml (pacs.008.001.09)
-    pacs002_YYYY-MM-DD.xml (pacs.002.001.09)
-    camt054_YYYY-MM-DD.xml (camt.054.001.09)
+Scope:
+- 14 daily folders (2025-09-21 .. 2025-10-04)
+- ~1150 transactions/day (~16100 total)
+- Message types: pain.001.001.09, pacs.008.001.09, pacs.002.001.09, camt.054.001.09
+- Linked by InstrId and EndToEndId across all messages
 
-Date Range: 2025-09-21 .. 2025-10-04
-Transactions per day: ~380
-Total transactions: ~5320
+Variability Highlights:
+- Multiple PmtInf groups per pain.001 to vary Debtors and PmtMtd
+- Varied InitgPty at GrpHdr, and UltmtDbtr per transaction to simulate on-behalf initiators
+- PmtMtd mixed: TRF, CHK, TRA, DD
+- PmtTpInf varied per transaction via SvcLvl (SEPA/URGP/NURG/PRPT) and InstrPrty (HIGH/NORM)
+- Diverse currencies (EUR, USD, GBP, CHF, JPY, CAD, AUD, SEK)
+- Multiple countries across EU/US/CH/SE/IE
+- Realistic ChargeBearer distributions based on payment type
+- Status patterns in pacs.002 segmented by amount and type with realistic rejection reasons
+- Amounts sampled from retail/SME/business/treasury distributions
 
-Linking Keys:
-- InstrId and EndToEndId are consistent across pain.001 -> pacs.008 -> pacs.002 -> camt.054 entries
-- Use these to join during ETL
+ETL Tips (Power BI):
+1) Get Data > XML; create a query per message type.
+2) Expand to nodes: 
+   - pain.001: CstmrCdtTrfInitn/GrpHdr, PmtInf, PmtInf/CdtTrfTxInf
+   - pacs.008: FIToFICstmrCdtTrf/GrpHdr, CdtTrfTxInf
+   - pacs.002: FIToFIPmtStsRpt/OrgnlGrpInfAndSts/TxInfAndSts
+   - camt.054: BkToCstmrDbtCdtNtfctn/Ntfctn/Ntry and Ntry/NtryDtls/TxDtls/Refs
+3) Join on InstrId and EndToEndId (pain -> pacs -> pacs.002 -> camt.054).
+4) Build star schema: FactPayments (from pacs.008), with dimensions for Date, Party (Debtor/Creditor), Currency, Purpose, Status, Method (PmtMtd), Type (SvcLvl/InstrPrty).
+5) Use ChargeBearer, BICs, Countries for corridor & fee analysis. 
+6) KPIs: volume, value, rejection rate, processing time (pain->pacs->camt), high-value flows, corridor heatmaps.
 
-Suggested Power BI ETL Steps:
-1) Get Data -> XML -> select a file (e.g., pacs008_YYYY-MM-DD.xml)
-2) In Power Query, expand nodes to reach CdtTrfTxInf (for pacs.008, pain.001), OrgnlGrpInfAndSts/TxInfAndSts (pacs.002), and Ntfctn/Ntry (camt.054).
-3) Create queries for each message type and add columns:
-   - pacs.008: MsgId, CreDtTm, IntrBkSttlmAmt@Ccy, IntrBkSttlmAmt (value), IntrBkSttlmDt, Dbtr/Cdtr info, Debtor/Creditor BICs, Purp/Cd, EndToEndId, InstrId, ChrgBr
-   - pain.001: InstdAmt@Ccy, InstdAmt, Cdtr data, EndToEndId, InstrId, ReqdExctnDt
-   - pacs.002: TxSts (ACSP/RJCT/etc), OrgnlInstrId, OrgnlEndToEndId, OrgnlMsgId
-   - camt.054: Ntry/Amt@Ccy, Ntry/Amt, Ntry/ValDt, TxDtls/Refs/EndToEndId and InstrId
-4) Create a star schema:
-   - FactPayments (from pacs.008) with Amount, Currency, Settlement Date, Debtor/Creditor IDs, Purpose, BICs
-   - DimParty (Debtor & Creditor), DimCurrency, DimPurpose, DimStatus, DimDate
-5) Build dashboards:
-   - Overview: KPIs, trends, maps by country, purpose breakdown
-   - Operations: corridor flows by BIC, processing times (pain->pacs->camt)
-   - Reconciliation: pain vs pacs vs camt matching by EndToEndId/InstrId
-   - Compliance: high-value, purpose codes, corridors
-   - Analytics: forecasting, anomalies
-
-Notes:
-- All company names, BICs, IBANs are synthetic (for demo only).
-- Status distribution in pacs.002 skews toward ACSP with some RJCT/PDNG.
-- Amounts are randomly distributed with occasional high values.
+Note:
+- This is a synthetic dataset for analytics/ETL practice only and may not satisfy all scheme-level validations.
