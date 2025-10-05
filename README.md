@@ -1,13 +1,15 @@
 # ISO20022 Payments Dashboard
 
-## 1. Resume
+## 1. Executive Summary
 
 ## 2. 📑 Index
 
-- [1. Resume](#1-resume )
-- [4. Objectives]
-- [5. Fundamentals]
-- [6. Dataset Structure]
+- [1. Executive Summary](#1-executive-summary )
+- [2. Business Fundamentals]
+- [3. Dataset Structure]
+- [4. Functional Requirements]
+- [5. User Roles]
+- [6. Objectives]
 - [7. Mission & Core Values]
 - [8. Team Structure & User Roles]
 - [9. Requirements]
@@ -18,17 +20,7 @@
 - [14. SQL Simple Queries]
 - [15. SQL Advanced Queries]
 
-## User Roles
-
-| Role                            | Dashboard Pages                                                 | Typical Actions                                                                                                                    | Access                                                                      |
-|----------------------------------|------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
-| **1. Executive / Management**   | 🟡 Page 1: Payments Overview                                    | • View KPIs, trends, top corridors. <br>• Drill into high-value transactions.                                                      | ✅ View-only (Power BI App or dashboard link)                                |
-| **2. Operations Team**          | 🟢 Page 2: Operational Monitoring <br>🧾 Page 3: Reconciliation | • Monitor daily transactions & delays. <br>• Investigate operational bottlenecks. <br>• Drill through EndToEndId timelines.        | ✅ Viewer role with **date / currency / status filters**                     |
-| **3. Finance & Reconciliation** | 🧾 Page 3: Reconciliation                                       | • Match pain.001 vs camt.054. <br>• Resolve unmatched transactions. <br>• Export reports to Excel if needed.                       | ✅ Viewer + Export permissions                                               |
-| **4. Compliance / Regulatory**  | 🕵 Page 4: Regulatory / Compliance                              | • Filter by PurposeCode, corridor. <br>• Identify missing LEI or structured remittance. <br>• Export filtered lists for reporting. | ✅ Viewer + Export; may have access to specific RLS (e.g., by jurisdiction). |
-| **5. Data Science / Analytics** | 📈 Page 5: Advanced Analytics                                   | • Develop forecasts, anomaly detection. <br>• Run custom Power BI or Python models.                                                | ✅ Contributor or shared dataset access                                      |
-
-## Fundamentals
+## Business Fundamentals
 
 ### Structure of an ISO 20022 Message Name
 
@@ -78,6 +70,16 @@
 │
 └── README.txt
 ```
+
+## User Roles
+
+| Role                            | Dashboard Pages                                                 | Typical Actions                                                                                                                    | Access                                                                      |
+|----------------------------------|------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| **1. Executive / Management**   | 🟡 Page 1: Payments Overview                                    | • View KPIs, trends, top corridors. • Drill into high-value transactions.                                                      | ✅ View-only (Power BI App or dashboard link)                                |
+| **2. Operations Team**          | 🟢 Page 2: Operational Monitoring 🧾 Page 3: Reconciliation | • Monitor daily transactions & delays. • Investigate operational bottlenecks. • Drill through EndToEndId timelines.        | ✅ Viewer role with **date / currency / status filters**                     |
+| **3. Finance & Reconciliation** | 🧾 Page 3: Reconciliation                                       | • Match pain.001 vs camt.054. • Resolve unmatched transactions. • Export reports to Excel if needed.                       | ✅ Viewer + Export permissions                                               |
+| **4. Compliance / Regulatory**  | 🕵 Page 4: Regulatory / Compliance                              | • Filter by PurposeCode, corridor. • Identify missing LEI or structured remittance. • Export filtered lists for reporting. | ✅ Viewer + Export; may have access to specific RLS (e.g., by jurisdiction). |
+| **5. Data Science / Analytics** | 📈 Page 5: Advanced Analytics                                   | • Develop forecasts, anomaly detection. • Run custom Power BI or Python models.                                                | ✅ Contributor or shared dataset access                                      |
 
 ## 🧠 Modelo Relacional Final (Power BI)
 
@@ -199,6 +201,3 @@ ALTER TABLE FactPayments
 ALTER TABLE FactPayments
     ADD FOREIGN KEY (SettlementDate) REFERENCES DimDateTime_Settlement(DateTime);
 ```
-
-
-
