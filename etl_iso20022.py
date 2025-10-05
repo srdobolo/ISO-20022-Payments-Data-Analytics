@@ -30,42 +30,27 @@ def parse_datetime(dt_str):
         return None
 
 def extract_amount_currency(tx, ns):
-    """
-    Robust amount extractor that handles:
-      - <IntrBkSttlmAmt Ccy="...">123</IntrBkSttlmAmt>
-      - <InstdAmt Ccy="...">123</InstdAmt>
-      - <Amt Ccy="...">123</Amt>
-      - <Amt><InstdAmt Ccy="...">123</InstdAmt></Amt>
-    Returns (amount_str or None, currency_str or None)
-    """
-    # 1) Preferred: settlement amount
+    """Robust amount & currency extraction."""
     el = tx.find('.//ns:IntrBkSttlmAmt', ns)
     if el is not None and el.text and el.attrib.get('Ccy'):
         return el.text.strip(), el.attrib.get('Ccy').strip()
 
-    # 2) Instructed amount (standalone)
     el = tx.find('.//ns:InstdAmt', ns)
     if el is not None and el.text and el.attrib.get('Ccy'):
         return el.text.strip(), el.attrib.get('Ccy').strip()
 
-    # 3) Parent <Amt> that itself has Ccy/text
     el = tx.find('.//ns:Amt', ns)
     if el is not None:
-        # 3a) If Amt contains InstdAmt child, use that
         child = el.find('.//ns:InstdAmt', ns)
         if child is not None and child.text and child.attrib.get('Ccy'):
             return child.text.strip(), child.attrib.get('Ccy').strip()
-        # 3b) Else if Amt itself has value/ccy
         if el.text and el.attrib.get('Ccy'):
             return el.text.strip(), el.attrib.get('Ccy').strip()
 
     return None, None
 
 def extract_debtor_triplet(root, tx, ns):
-    """
-    Prefer debtor data at transaction level; fallback to message level.
-    Returns (name, iban, country)
-    """
+    """Prefer debtor data at transaction level; fallback to message level."""
     name = (tx.findtext('.//ns:Dbtr/ns:Nm', namespaces=ns)
             or root.findtext('.//ns:Dbtr/ns:Nm', namespaces=ns))
     iban = (tx.findtext('.//ns:DbtrAcct/ns:Id/ns:IBAN', namespaces=ns)
@@ -74,25 +59,66 @@ def extract_debtor_triplet(root, tx, ns):
             or root.findtext('.//ns:Dbtr/ns:PstlAdr/ns:Ctry', namespaces=ns))
     return name, iban, ctry
 
-# ========================
-# DIM PARTY + PURPOSE LOOKUP
-# ========================
-parties = {}
-party_counter = 1
-purpose_lookup = {}  # EndToEndId (normalized) -> PurposeCode
+def build_hourly_dim_from_series(series: pd.Series):
+    """
+    Build ISO 8601 hourly DateTime dimension from datetime series.
+    Output includes full DateTime, Date, Time, Hour, Minute, Year, Month, MonthName, Day, WeekNumber.
+    """
+    series = pd.to_datetime(series, errors='coerce', utc=True).dropna().dt.tz_localize(None)
+    if series.empty:
+        return pd.DataFrame(columns=[
+            'DateTime','Date','Time','Hour','Minute','Year','Month','MonthName','Day','WeekNumber'
+        ])
+    start = series.min().floor('H')
+    end = series.max().ceil('H')
+    hourly = pd.date_range(start=start, end=end, freq='H')
 
-def get_or_create_party(name, iban, country):
-    global party_counter
+    dim = pd.DataFrame({'DateTime': hourly.strftime('%Y-%m-%dT%H:%M:%S')})  # ✅ ISO 8601
+    dim['Date'] = hourly.date
+    dim['Time'] = hourly.strftime('%H:%M')
+    dim['Hour'] = hourly.hour
+    dim['Minute'] = hourly.minute
+    dim['Year'] = hourly.year
+    dim['Month'] = hourly.month
+    dim['MonthName'] = hourly.strftime('%B')
+    dim['Day'] = hourly.day
+    dim['WeekNumber'] = hourly.isocalendar().week
+    return dim
+
+# ========================
+# ROLE-PLAYING PARTY DIMS + PURPOSE LOOKUP
+# ========================
+debtors = {}
+creditors = {}
+debtor_counter = 1
+creditor_counter = 1
+purpose_lookup = {}
+
+def get_or_create_debtor(name, iban, country):
+    global debtor_counter
     key = (name or '', iban or '')
-    if key not in parties:
-        parties[key] = {
-            'PartyID': f'P{party_counter:05d}',
+    if key not in debtors:
+        debtors[key] = {
+            'PartyID': f'D{debtor_counter:05d}',
             'Name': name,
             'IBAN': iban,
             'CountryCode': country
         }
-        party_counter += 1
-    return parties[key]['PartyID']
+        debtor_counter += 1
+    return debtors[key]['PartyID']
+
+def get_or_create_creditor(name, iban, country):
+    global creditor_counter
+    key = (name or '', iban or '')
+    if key not in creditors:
+        creditors[key] = {
+            'PartyID': f'C{creditor_counter:05d}',
+            'Name': name,
+            'IBAN': iban,
+            'CountryCode': country
+        }
+        creditor_counter += 1
+    return creditors[key]['PartyID']
 
 print("Extracting parties and purpose codes from pain.001 ...")
 
@@ -101,22 +127,22 @@ for file in glob.glob(os.path.join(pain001_dir, '*.xml')):
     root = tree.getroot()
     ns = {'ns': root.tag.split('}')[0].strip('{')}
 
-    # Debtor at message level
+    # Debtor (message level)
     dbtr_name = root.find('.//ns:Dbtr/ns:Nm', ns)
     dbtr_iban = root.find('.//ns:DbtrAcct/ns:Id/ns:IBAN', ns)
     dbtr_country = root.find('.//ns:Dbtr/ns:PstlAdr/ns:Ctry', ns)
-    get_or_create_party(
+    get_or_create_debtor(
         dbtr_name.text if dbtr_name is not None else None,
         dbtr_iban.text if dbtr_iban is not None else None,
         dbtr_country.text if dbtr_country is not None else None
     )
 
-    # Creditors + PurposeCode per transaction
+    # Creditors per transaction + PurposeCode lookup
     for cdt in root.findall('.//ns:CdtTrfTxInf', ns):
         cdtr_name = cdt.find('.//ns:Cdtr/ns:Nm', ns)
         cdtr_iban = cdt.find('.//ns:CdtrAcct/ns:Id/ns:IBAN', ns)
         cdtr_country = cdt.find('.//ns:Cdtr/ns:PstlAdr/ns:Ctry', ns)
-        get_or_create_party(
+        get_or_create_creditor(
             cdtr_name.text if cdtr_name is not None else None,
             cdtr_iban.text if cdtr_iban is not None else None,
             cdtr_country.text if cdtr_country is not None else None
@@ -127,12 +153,19 @@ for file in glob.glob(os.path.join(pain001_dir, '*.xml')):
         if end_to_end and purpose_cd:
             purpose_lookup[(end_to_end or '').strip().upper()] = purpose_cd.strip()
 
-with open(os.path.join(OUTPUT_DIR, 'DimParty.csv'), 'w', newline='', encoding='utf-8') as f:
+# Write separate party dims
+with open(os.path.join(OUTPUT_DIR, 'DimParty_Debtor.csv'), 'w', newline='', encoding='utf-8') as f:
     writer = csv.DictWriter(f, fieldnames=['PartyID', 'Name', 'IBAN', 'CountryCode'])
     writer.writeheader()
-    writer.writerows(parties.values())
+    writer.writerows(debtors.values())
 
-print(f"DimParty.csv created with {len(parties)} rows")
+with open(os.path.join(OUTPUT_DIR, 'DimParty_Creditor.csv'), 'w', newline='', encoding='utf-8') as f:
+    writer = csv.DictWriter(f, fieldnames=['PartyID', 'Name', 'IBAN', 'CountryCode'])
+    writer.writeheader()
+    writer.writerows(creditors.values())
+
+print(f"DimParty_Debtor.csv rows: {len(debtors)}")
+print(f"DimParty_Creditor.csv rows: {len(creditors)}")
 print(f"PurposeCode lookup entries: {len(purpose_lookup)}")
 
 # ========================
@@ -156,20 +189,20 @@ for file in glob.glob(os.path.join(pacs008_dir, '*.xml')):
         end_to_end = tx.findtext('.//ns:PmtId/ns:EndToEndId', namespaces=ns)
         norm_end = (end_to_end or '').strip().upper()
 
-        # Amount & Currency (robust)
+        # Amount & Currency
         amount, currency = extract_amount_currency(tx, ns)
 
-        # Debtor (prefer tx-level, fallback to message-level); guarantees a PartyID
+        # Debtor (prefer tx-level)
         debtor_name, debtor_iban, debtor_country = extract_debtor_triplet(root, tx, ns)
-        debtor_id = get_or_create_party(debtor_name, debtor_iban, debtor_country)
+        debtor_id = get_or_create_debtor(debtor_name, debtor_iban, debtor_country)
 
         # Creditor
         cdtr_name = tx.findtext('.//ns:Cdtr/ns:Nm', namespaces=ns)
         cdtr_iban = tx.findtext('.//ns:CdtrAcct/ns:Id/ns:IBAN', namespaces=ns)
         cdtr_country = tx.findtext('.//ns:Cdtr/ns:PstlAdr/ns:Ctry', namespaces=ns)
-        creditor_id = get_or_create_party(cdtr_name, cdtr_iban, cdtr_country)
+        creditor_id = get_or_create_creditor(cdtr_name, cdtr_iban, cdtr_country)
 
-        # Agents, Purpose, Charges
+        # Agents, Purpose, Status init
         debtor_bic = tx.findtext('.//ns:DbtrAgt/ns:FinInstnId/ns:BICFI', namespaces=ns) \
                       or root.findtext('.//ns:DbtrAgt/ns:FinInstnId/ns:BICFI', namespaces=ns)
         creditor_bic = tx.findtext('.//ns:CdtrAgt/ns:FinInstnId/ns:BICFI', namespaces=ns)
@@ -201,11 +234,10 @@ with open(os.path.join(OUTPUT_DIR, 'FactPayments.csv'), 'w', newline='', encodin
     writer = csv.DictWriter(f, fieldnames=fact_rows[0].keys())
     writer.writeheader()
     writer.writerows(fact_rows)
-
 print(f"FactPayments.csv created with {len(fact_rows)} rows")
 
 # ========================
-# ENRICH WITH PACS.002 (normalized EndToEndId)
+# ENRICH WITH PACS.002
 # ========================
 print("Enriching FactPayments with pacs.002 ...")
 
@@ -239,11 +271,10 @@ with open(os.path.join(OUTPUT_DIR, 'FactPayments.csv'), 'w', newline='', encodin
     writer = csv.DictWriter(f, fieldnames=fact_rows[0].keys())
     writer.writeheader()
     writer.writerows(fact_rows)
-
 print("FactPayments.csv enriched with pacs.002")
 
 # ========================
-# ENRICH WITH CAMT.054 (normalized EndToEndId)
+# ENRICH WITH CAMT.054
 # ========================
 print("Reconciling payments with camt.054 ...")
 
@@ -275,17 +306,16 @@ with open(os.path.join(OUTPUT_DIR, 'FactPayments.csv'), 'w', newline='', encodin
     writer = csv.DictWriter(f, fieldnames=fact_rows[0].keys())
     writer.writeheader()
     writer.writerows(fact_rows)
-
 print("FactPayments.csv reconciled with camt.054")
 
 # ========================
-# DIMENSION TABLES
+# DIMENSIONS
 # ========================
 print("Generating dimension tables ...")
 
 fact_df = pd.read_csv(os.path.join(OUTPUT_DIR, 'FactPayments.csv'), dtype=str)
 
-# DimStatus with mapping
+# DimStatus
 status_mapping = {
     "ACSC": "Accepted Settlement Completed — Transaction has been completed successfully",
     "ACSP": "Accepted Settlement in Process — Transaction is being processed and will be settled"
@@ -300,7 +330,7 @@ dim_currency['CurrencyName'] = dim_currency['CurrencyCode']
 dim_currency['CurrencySymbol'] = ''
 dim_currency.to_csv(os.path.join(OUTPUT_DIR, 'DimCurrency.csv'), index=False)
 
-# DimPurposeCode with mapping
+# DimPurposeCode
 purpose_mapping = {
     "DIVD": "Dividends",
     "EDUC": "Education",
@@ -317,23 +347,23 @@ dim_purpose = fact_df[['PurposeCode']].dropna().drop_duplicates().sort_values(by
 dim_purpose['Description'] = dim_purpose['PurposeCode'].map(purpose_mapping).fillna(dim_purpose['PurposeCode'])
 dim_purpose.to_csv(os.path.join(OUTPUT_DIR, 'DimPurposeCode.csv'), index=False)
 
-# DimDate
-date_cols = ['PaymentDate', 'SettlementDate']
-dates_series = pd.to_datetime(
-    pd.Series(fact_df[date_cols].values.ravel('K')),
-    errors='coerce',
-    utc=True
-)
-dates_series = dates_series.dt.tz_localize(None)
-dates_series = dates_series.dropna().dt.normalize().drop_duplicates().sort_values()
+# ========================
+# DimDateTime (Payment & Settlement) - ISO 8601
+# ========================
+pay_datetime_series = pd.to_datetime(fact_df['PaymentDate'], errors='coerce', utc=True)
+dim_datetime_payment = build_hourly_dim_from_series(pay_datetime_series)
+dim_datetime_payment.to_csv(os.path.join(OUTPUT_DIR, 'DimDateTime_Payment.csv'), index=False)
 
-dim_date = pd.DataFrame({'Date': dates_series})
-dim_date['Year'] = dim_date['Date'].dt.year
-dim_date['MonthNumber'] = dim_date['Date'].dt.month
-dim_date['Month'] = dim_date['Date'].dt.strftime('%B')
-dim_date['Quarter'] = dim_date['Date'].dt.quarter
-dim_date['Day'] = dim_date['Date'].dt.day
-dim_date['WeekNumber'] = dim_date['Date'].dt.isocalendar().week
-dim_date.to_csv(os.path.join(OUTPUT_DIR, 'DimDate.csv'), index=False, date_format='%Y-%m-%d')
+settl_datetime_series = pd.to_datetime(fact_df['SettlementDate'], errors='coerce', utc=True)
+dim_datetime_settlement = build_hourly_dim_from_series(settl_datetime_series)
+dim_datetime_settlement.to_csv(os.path.join(OUTPUT_DIR, 'DimDateTime_Settlement.csv'), index=False)
 
-print("ETL complete. All tables are ready in the 'output' folder.")
+print("ETL complete. Generated:")
+print(" - FactPayments.csv")
+print(" - DimParty_Debtor.csv")
+print(" - DimParty_Creditor.csv")
+print(" - DimStatus.csv")
+print(" - DimCurrency.csv")
+print(" - DimPurposeCode.csv")
+print(" - DimDateTime_Payment.csv")
+print(" - DimDateTime_Settlement.csv")
