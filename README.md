@@ -71,6 +71,8 @@
 └── README.txt
 ```
 
+## Functional Requirements
+
 ## User Roles
 
 | Role                            | Dashboard Pages                                                 | Typical Actions                                                                                                                    | Access                                                                      |
