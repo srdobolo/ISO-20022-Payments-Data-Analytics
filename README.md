@@ -83,6 +83,8 @@ This section defines the functional requirements for the ISO 20022 Payments Anal
 - FR3: The system must normalize dates to ISO 8601 format (YYYY-MM-DDTHH:MM:SS) for PaymentDate and SettlementDate fields.
 - FR4: The ETL pipeline must enrich payment records by joining pacs.008 with pacs.002 and camt.054 using EndToEndId to populate settlement date and status information.
 - FR5: The ETL must generate a star schema with:
+    1. One Fact table: FactPayments
+    2. Multiple Dimension tables: Parties (Debtor, Creditor), Currency, Purpose, Status, DateTime (Payment, Settlement)
 - FR6: Each table must be exported in .csv format for ingestion into Power BI.
 
 ### 5.2 Data Model
