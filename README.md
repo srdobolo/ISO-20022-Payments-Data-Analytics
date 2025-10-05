@@ -196,14 +196,15 @@ This section defines the performance, security, and operational constraints for 
 
 ### 7.2 Technology Stack
 
-| Component                 | Technology / Tool                                                      |
-| ------------------------- | ---------------------------------------------------------------------- |
-| **ETL**                   | Python 3.7+ with `xml.etree.ElementTree`, Pandas                       |
-| **File Ingestion**        | Local directory / secure network drive (can extend to Azure Data Lake) |
-| **Storage (Transformed)** | CSV files (Fact + Dim tables), easily replaceable with SQL DB          |
-| **BI Layer**              | Microsoft Power BI (Desktop + Service)                                 |
-| **Access Control**        | Azure AD roles + Power BI Security                                     |
-| **Version Control**       | GitHub or Azure DevOps for ETL scripts                                 |
+| Component                 | Technology / Tool                                                               |
+| ------------------------- | ------------------------------------------------------------------------------- |
+| **ETL**                   | Python 3.7+ with `xml.etree.ElementTree`, `pandas`                              |
+| **File Ingestion**        | Local directory / secure network drive (scalable to Azure Data Lake)            |
+| **Storage (Transformed)** | CSV files (Fact + Dim tables), easily replaceable with relational DB (e.g. SQL) |
+| **Data Modeling (ERD)**   | [**Mermaid.js**](https://mermaid.js.org/) — for ER diagrams in Markdown/GitHub  |
+| **BI Layer**              | Microsoft Power BI (Desktop + Service)                                          |
+| **Access Control**        | Azure Active Directory (Azure AD) roles + Power BI Row-Level Security (RLS)     |
+| **Version Control**       | GitHub or Azure DevOps for ETL scripts and documentation                        |
 
 ### 7.3 Data Model Principles
 
