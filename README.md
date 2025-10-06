@@ -2,7 +2,7 @@
 
 ## 1. Executive Summary
 
-## 2. 📑 Index
+## 2. Index
 
 - [1. Executive Summary](#1-executive-summary )
 - [3. Business Fundamentals]
@@ -46,6 +46,8 @@ Falta aqui fundamentos. Explicar também o formato de cada ficheiro xml e mapeam
 - pacs.002 - FI to FI Payment Status Report - Provides status updates about interbank payment messages (e.g., accepted, rejected, pending).
 - camt.054 - Bank to Customer Debit/Credit Notification - Provides reports of credits and debits booked on the account — often used for automated reconciliation by corporates.
 
+[Index](#2-index)
+
 ## 4. Dataset Structure
 
 ```bash
@@ -73,6 +75,8 @@ Falta aqui fundamentos. Explicar também o formato de cada ficheiro xml e mapeam
 │
 └── README.txt
 ```
+
+[Index](#2-index)
 
 ## 5. Functional Requirements
 
@@ -112,6 +116,8 @@ This section defines the functional requirements for the ISO 20022 Payments Anal
 - FR14: Row-level security (RLS) must be configurable to restrict data by business unit or region.
 - FR15: Different user roles (Executive, Operations, Finance, Compliance, Data Science) must have tailored permissions for viewing, filtering, or exporting reports.
 
+[Index](#2-index)
+
 ## 6. Non-Functional Requirements
 
 This section defines the performance, security, and operational constraints for the ISO 20022 Payments Analytics project.
@@ -150,6 +156,8 @@ This section defines the performance, security, and operational constraints for 
 - NFR15: The ETL process must include error logging and validation, flagging malformed XML files or missing required fields.
 - NFR16: Failures during extraction or transformation must not corrupt existing outputs; partial failures should be isolated and logged.
 - NFR17: The system must provide clear reprocessing mechanisms for failed files without manual data correction.
+
+[Index](#2-index)
 
 ## 7. Technical Architecture
 
@@ -215,6 +223,8 @@ This section defines the performance, security, and operational constraints for 
 - Surrogate Keys — Debtors and Creditors use separate IDs (Dxxxxx / Cxxxxx) to prevent relationship conflicts.
 - ISO 8601 Datetime Format — All DateTime fields stored in UTC ISO 8601 format (e.g., 2025-09-21T08:00:00Z).
 
+[Index](#2-index)
+
 ## 8. User Roles
 
 | Role                            | Dashboard Pages                                                 | Typical Actions                                                                                                                    | Access                                                                      |
@@ -225,11 +235,13 @@ This section defines the performance, security, and operational constraints for 
 | **4. Compliance / Regulatory**  | 🕵 Page 4: Regulatory / Compliance                              | • Filter by PurposeCode, corridor. • Identify missing LEI or structured remittance. • Export filtered lists for reporting. | ✅ Viewer + Export; may have access to specific RLS (e.g., by jurisdiction). |
 | **5. Data Science / Analytics** | 📈 Page 5: Advanced Analytics                                   | • Develop forecasts, anomaly detection. • Run custom Power BI or Python models.                                                | ✅ Contributor or shared dataset access                                      |
 
+[Index](#2-index)
+
 ## 9. Data Modeling
 
 [Conceptual Model]
 
-!include "docs/logical-model.md"
+!include "docs/logical-model.md" 
 
 [Logical Model](docs/logical-model.md)
 
@@ -355,3 +367,5 @@ ALTER TABLE FactPayments
 ALTER TABLE FactPayments
     ADD FOREIGN KEY (SettlementDate) REFERENCES DimDateTime_Settlement(DateTime);
 ```
+
+[Index](#2-index)
