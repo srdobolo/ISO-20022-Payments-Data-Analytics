@@ -23,7 +23,44 @@
 
 ## 3. Business Fundamentals
 
-Falta aqui fundamentos. Explicar também o formato de cada ficheiro xml e mapeamento das tags para colunas.
+### 🌍 Context
+
+The global payments landscape is undergoing rapid modernization driven by the adoption of the ISO 20022 standard, which provides a richer, structured, and more granular format for financial messages across the payment chain. Banks, payment service providers, and corporates are transitioning to ISO 20022 to support real-time payments, improve reconciliation, and enhance regulatory reporting.
+
+However, ISO 20022 introduces complex hierarchical XML structures and multiple message types (e.g., pain.001, pacs.008, pacs.002, camt.054) that must be linked and analyzed together to provide meaningful business insights. Traditional reporting tools often struggle to handle this complexity efficiently
+
+### 🏦 Business Problem
+
+Financial institutions and corporate treasuries need to answer key operational and strategic questions:
+
+1. Operational Monitoring
+    - How many payments were processed today, and what’s the total value?
+    - Which corridors or BICs are experiencing delays?
+    - Are there unmatched transactions between initiation and settlement?
+
+2. Reconciliation
+    - Can we match every pain.001 initiation to a corresponding pacs.008, pacs.002 status, and camt.054 notification?
+    - Which transactions failed or are pending settlement?
+
+3. Compliance & Regulatory
+    - Are all mandatory fields (LEI, PurposeCode, structured remittance) present?
+    - Can we generate corridor-based and high-value transaction reports for regulatory bodies?
+
+4. Strategic Analytics
+    - Which payment corridors are growing fastest?
+    - What are the trends in settlement times across currencies or geographies?
+    - How can we detect anomalies or forecast liquidity flows?
+
+These questions require a unified data model that can integrate and normalize ISO 20022 messages efficiently, enabling real-time monitoring, regulatory compliance, and advanced analytics.
+
+### 💡 Project Objectives
+
+The ISO 20022 Payments Data Analytics project aims to:
+
+1. Centralize ISO 20022 message ingestion (pain.001, pacs.008, pacs.002, camt.054) into a staging layer, followed by structured transformation into a star schema suitable for analytics.
+2. Enable end-to-end traceability of transactions using InstrId and EndToEndId as linking keys across all message types.
+3. Support operational teams, compliance officers, and data scientists with real-time dashboards and data models that are scalable and easy to extend.
+4. Lay the foundation for advanced analytics, including anomaly detection, corridor analysis, high-value transaction monitoring, and forecasting.
 
 ### 3.1 Structure of an ISO 20022 Message Name
 
@@ -31,13 +68,13 @@ Falta aqui fundamentos. Explicar também o formato de cada ficheiro xml e mapeam
 <business area>.<message identifier>.<variant>.<version>
 ```
 
-### 3.2 Business Area Codes
+### 3.2 Payments Codes
 
-- pain - PAyment INitiation - Used between customer → bank for initiating payments (e.g., bulk credit transfers, direct debits).
-- pacs - PAyment Clearing and Settlement - Used between financial institutions (bank ↔ bank) for interbank payment processing.
-- camt - CAsh Management - Used for account reporting, statements, notifications, and reconciliations.
-- reda - Reference Data - Used for exchanging static reference data like business party info.
-- auth - Authorities - Messages exchanged with regulatory or supervisory authorities.
+- pain - **PA**yment **IN**itiation - Used between customer → bank for initiating payments (e.g., bulk credit transfers, direct debits).
+- pacs - **PA**yment **C**learing and **S**ettlement - Used between financial institutions (bank ↔ bank) for interbank payment processing.
+- camt - **CA**sh **M**anagemen**t** - Used for account reporting, statements, notifications, and reconciliations.
+- reda - **Re**ference **Da**ta - Used for exchanging static reference data like business party info.
+- auth - **Auth**orities - Messages exchanged with regulatory or supervisory authorities.
 
 ### 3.3 Common Message Identifiers
 
