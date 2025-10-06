@@ -258,6 +258,91 @@ Falta aqui fundamentos. Explicar também o formato de cada ficheiro xml e mapeam
 <Document>
 ```
 
+### 4.2 Tag Mapping
+
+#### 4.2.1 pain.001 — Customer Credit Transfer Initiation
+
+| Coluna (destino)         | Tag XML / Descrição                             |
+| ------------------------ | ----------------------------------------------- |
+| `MessageId`              | `<GrpHdr>/<MsgId>`                              |
+| `CreationDateTime`       | `<GrpHdr>/<CreDtTm>`                            |
+| `NumberOfTransactions`   | `<GrpHdr>/<NbOfTxs>`                            |
+| `ControlSum`             | `<GrpHdr>/<CtrlSum>`                            |
+| `InitiatingPartyName`    | `<GrpHdr>/<InitgPty>/<Nm>`                      |
+| `PaymentInformationId`   | `<PmtInf>/<PmtInfId>`                           |
+| `PaymentMethod`          | `<PmtInf>/<PmtMtd>`                             |
+| `RequestedExecutionDate` | `<PmtInf>/<ReqdExctnDt>`                        |
+| `DebtorName`             | `<PmtInf>/<Dbtr>/<Nm>`                          |
+| `DebtorIBAN`             | `<PmtInf>/<DbtrAcct>/<Id>/<IBAN>`               |
+| `DebtorAgentBIC`         | `<PmtInf>/<DbtrAgt>/<FinInstnId>/<BIC>`         |
+| `InstructionId`          | `<CdtTrfTxInf>/<PmtId>/<InstrId>`               |
+| `EndToEndId`             | `<CdtTrfTxInf>/<PmtId>/<EndToEndId>`            |
+| `ServiceLevelCode`       | `<CdtTrfTxInf>/<PmtTpInf>/<SvcLvl>/<Cd>`        |
+| `InstructionPriority`    | `<CdtTrfTxInf>/<PmtTpInf>/<InstrPrty>`          |
+| `InstructedAmount`       | `<CdtTrfTxInf>/<Amt>/<InstdAmt>` (valor)        |
+| `Currency`               | `<CdtTrfTxInf>/<Amt>/<InstdAmt>` atributo `Ccy` |
+| `UltimateDebtorName`     | `<CdtTrfTxInf>/<UltmtDbtr>/<Nm>`                |
+| `CreditorAgentBIC`       | `<CdtTrfTxInf>/<CdtrAgt>/<FinInstnId>/<BIC>`    |
+| `CreditorName`           | `<CdtTrfTxInf>/<Cdtr>/<Nm>`                     |
+| `CreditorStreet`         | `<CdtTrfTxInf>/<Cdtr>/<PstlAdr>/<StrtNm>`       |
+| `CreditorBuildingNumber` | `<CdtTrfTxInf>/<Cdtr>/<PstlAdr>/<BldgNb>`       |
+| `CreditorTown`           | `<CdtTrfTxInf>/<Cdtr>/<PstlAdr>/<TwnNm>`        |
+| `CreditorCountry`        | `<CdtTrfTxInf>/<Cdtr>/<PstlAdr>/<Ctry>`         |
+| `CreditorIBAN`           | `<CdtTrfTxInf>/<CdtrAcct>/<Id>/<IBAN>`          |
+| `RemittanceInformation`  | `<CdtTrfTxInf>/<RmtInf>/<Ustrd>`                |
+| `PurposeCode`            | `<CdtTrfTxInf>/<Purp>/<Cd>`                     |
+
+#### 4.2.2 pacs.008 — FI To FI Customer Credit Transfer
+
+| Coluna (destino)            | Tag XML / Descrição                            |
+| --------------------------- | ---------------------------------------------- |
+| `MessageId`                 | `<GrpHdr>/<MsgId>`                             |
+| `CreationDateTime`          | `<GrpHdr>/<CreDtTm>`                           |
+| `InstructionId`             | `<CdtTrfTxInf>/<PmtId>/<InstrId>`              |
+| `EndToEndId`                | `<CdtTrfTxInf>/<PmtId>/<EndToEndId>`           |
+| `InterbankSettlementAmount` | `<CdtTrfTxInf>/<IntrBkSttlmAmt>` (valor)       |
+| `Currency`                  | atributo `Ccy` de `<IntrBkSttlmAmt>`           |
+| `InterbankSettlementDate`   | `<CdtTrfTxInf>/<IntrBkSttlmDt>`                |
+| `DebtorAgentBICFI`          | `<CdtTrfTxInf>/<DbtrAgt>/<FinInstnId>/<BICFI>` |
+| `CreditorAgentBICFI`        | `<CdtTrfTxInf>/<CdtrAgt>/<FinInstnId>/<BICFI>` |
+| `DebtorName`                | `<CdtTrfTxInf>/<Dbtr>/<Nm>`                    |
+| `DebtorIBAN`                | `<CdtTrfTxInf>/<DbtrAcct>/<Id>/<IBAN>`         |
+| `CreditorName`              | `<CdtTrfTxInf>/<Cdtr>/<Nm>`                    |
+| `CreditorIBAN`              | `<CdtTrfTxInf>/<CdtrAcct>/<Id>/<IBAN>`         |
+| `RemittanceInformation`     | `<CdtTrfTxInf>/<RmtInf>/<Ustrd>`               |
+
+#### 4.2.3 pacs.002 — FI To FI Payment Status Report
+
+| Coluna (destino)        | Tag XML / Descrição                           |
+| ----------------------- | --------------------------------------------- |
+| `MessageId`             | `<GrpHdr>/<MsgId>`                            |
+| `CreationDateTime`      | `<GrpHdr>/<CreDtTm>`                          |
+| `OriginalMessageId`     | `<OrgnlGrpInfAndSts>/<OrgnlMsgId>`            |
+| `OriginalMessageNameId` | `<OrgnlGrpInfAndSts>/<OrgnlMsgNmId>`          |
+| `GroupStatus`           | `<OrgnlGrpInfAndSts>/<GrpSts>`                |
+| `OriginalPaymentInfoId` | `<OrgnlPmtInfAndSts>/<OrgnlPmtInfId>`         |
+| `StatusId`              | `<TxInfAndSts>/<StsId>`                       |
+| `OriginalInstructionId` | `<TxInfAndSts>/<OrgnlInstrId>`                |
+| `OriginalEndToEndId`    | `<TxInfAndSts>/<OrgnlEndToEndId>`             |
+| `TransactionStatus`     | `<TxInfAndSts>/<TxSts>`                       |
+| `AcceptanceDateTime`    | `<TxInfAndSts>/<AccptncDtTm>`                 |
+| `OriginalAmount`        | `<TxInfAndSts>/<OrgnlTxRef>/<Amt>/<InstdAmt>` |
+| `Currency`              | atributo `Ccy` de `<InstdAmt>`                |
+
+#### 4.2.4 camt.054 — Bank To Customer Debit Credit Notification
+
+| Coluna (destino)       | Tag XML / Descrição             |
+| ---------------------- | ------------------------------- |
+| `MessageId`            | `<GrpHdr>/<MsgId>`              |
+| `CreationDateTime`     | `<GrpHdr>/<CreDtTm>`            |
+| `AccountIBAN`          | `<Ntfctn>/<Acct>/<Id>/<IBAN>`   |
+| `EntryAmount`          | `<Ntfctn>/<Ntry>/<Amt>` (valor) |
+| `Currency`             | atributo `Ccy` de `<Amt>`       |
+| `CreditDebitIndicator` | `<Ntry>/<CdtDbtInd>`            |
+| `BookingDate`          | `<Ntry>/<BookgDt>/<Dt>`         |
+| `ValueDate`            | `<Ntry>/<ValDt>/<Dt>`           |
+| `AdditionalEntryInfo`  | `<Ntry>/<AddtlNtryInf>`         |
+
 ⬆️ [Index](#2-index)
 
 ## 5. Functional Requirements
