@@ -76,6 +76,188 @@ Falta aqui fundamentos. Explicar também o formato de cada ficheiro xml e mapeam
 └── README.txt
 ```
 
+### 4.1 File Structure
+
+#### pain001
+
+```xml
+<?xml version='1.0' encoding='utf-8'?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.09">
+    <CstmrCdtTrfInitn>
+        <GrpHdr>
+            <MsgId>PAIN-2025-09-21-Global_Finance_SpA-97dab3c3</MsgId>
+            <CreDtTm>2025-09-21T08:00:00Z</CreDtTm>
+            <NbOfTxs>192</NbOfTxs>
+            <CtrlSum>15914195.66</CtrlSum>
+            <InitgPty><Nm>Global Finance SpA</Nm></InitgPty>
+        </GrpHdr>
+        <PmtInf>
+            <PmtInfId>PMTINF-2025-09-21-165141</PmtInfId>
+            <PmtMtd>TRF</PmtMtd>
+            <ReqdExctnDt>2025-09-21</ReqdExctnDt>
+            <Dbtr><Nm>Global Finance SpA</Nm></Dbtr>
+            <DbtrAcct><Id><IBAN>SE6510619244403548659086</IBAN></Id></DbtrAcct>
+            <DbtrAgt><FinInstnId><BIC>NDEASESSXXX</BIC></FinInstnId></DbtrAgt>
+            <CdtTrfTxInf>
+                <PmtId>
+                    <InstrId>INST-20250921-00000</InstrId>
+                    <EndToEndId>E2E-20250921-00000</EndToEndId>
+                </PmtId>
+                <PmtTpInf>
+                    <SvcLvl><Cd>NURG</Cd></SvcLvl>
+                    <InstrPrty>NORM</InstrPrty>
+                </PmtTpInf>
+                <Amt>
+                    <InstdAmt Ccy="GBP">1027874.86</InstdAmt>
+                </Amt>
+                <UltmtDbtr>
+                    <Nm>Corp_Initiator_01_00</Nm>
+                </UltmtDbtr>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <BIC>HYVEDEMMXXX</BIC>
+                    </FinInstnId>
+                </CdtrAgt>
+                <Cdtr>
+                    <Nm>Peter Dubois</Nm>
+                    <PstlAdr>
+                        <StrtNm>Musterstrasse</StrtNm>
+                        <BldgNb>22</BldgNb>
+                        <TwnNm>Berlin</TwnNm>
+                        <Ctry>DE</Ctry>
+                    </PstlAdr>
+                </Cdtr>
+                <CdtrAcct>
+                    <Id>
+                        <IBAN>DE7133045310603257969962</IBAN>
+                    </Id>
+                </CdtrAcct>
+                <RmtInf>
+                    <Ustrd>Ref 2025-09-0000</Ustrd>
+                </RmtInf>
+                <Purp>
+                    <Cd>SERV</Cd>
+                </Purp>
+            </CdtTrfTxInf>
+        <PmtInf>
+    <CstmrCdtTrfInitn>
+<Document>
+```
+
+#### pacs008
+
+```xml
+<?xml version='1.0' encoding='utf-8'?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.10">
+    <FIToFICstmrCdtTrf>
+        <GrpHdr>
+            <MsgId>PACS008-c12c6a8bf8</MsgId>
+            <CreDtTm>2025-09-21T08:58:00+00:00Z</CreDtTm>
+            <NbOfTxs>175</NbOfTxs>
+        </GrpHdr>
+            <CdtTrfTxInf>
+                <PmtId>
+                    <InstrId>INST-20250921-00000</InstrId>
+                    <EndToEndId>E2E-20250921-00000</EndToEndId>
+                </PmtId>
+                <IntrBkSttlmAmt Ccy="GBP">1027874.86</IntrBkSttlmAmt>
+                <IntrBkSttlmDt>2025-09-21</IntrBkSttlmDt>
+                <DbtrAgt>
+                    <FinInstnId>
+                        <BICFI>NDEASESSXXX</BICFI>
+                    </FinInstnId>
+                </DbtrAgt>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <BICFI>HYVEDEMMXXX</BICFI>
+                    </FinInstnId>
+                </CdtrAgt>
+                <Dbtr>
+                    <Nm>Global Finance SpA</Nm>
+                </Dbtr>
+                <DbtrAcct>
+                    <Id>
+                        <IBAN>SE6510619244403548659086</IBAN>
+                    </Id>
+                </DbtrAcct>
+                <Cdtr>
+                    <Nm>Peter Dubois</Nm>
+                </Cdtr>
+                <CdtrAcct>
+                    <Id>
+                        <IBAN>DE7133045310603257969962</IBAN>
+                    </Id>
+                </CdtrAcct>
+                <RmtInf>
+                    <Ustrd>Ref 2025-09-0000</Ustrd>
+                </RmtInf>
+            </CdtTrfTxInf>
+        </GrpHdr>
+    <FIToFICstmrCdtTrf>
+<Document>
+```
+
+#### pacs002
+
+```xml
+<?xml version='1.0' encoding='utf-8'?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.10">
+    <FIToFIPmtStsRpt>
+        <GrpHdr>
+            <MsgId>PACS002-ACSC-a64100e0</MsgId>
+            <CreDtTm>2025-09-21T10:00:00+00:00Z</CreDtTm>
+        </GrpHdr>
+        <OrgnlGrpInfAndSts>
+            <OrgnlMsgId>PAIN-2025-09-21-Global_Finance_SpA-97dab3c3</OrgnlMsgId>
+            <OrgnlMsgNmId>pain.001.001.09</OrgnlMsgNmId>
+            <GrpSts>PART</GrpSts>
+        </OrgnlGrpInfAndSts>
+        <OrgnlPmtInfAndSts>
+            <OrgnlPmtInfId>PMTINF-2025-09-21-165141</OrgnlPmtInfId>
+            <TxInfAndSts>
+                <StsId>STS-ca2be3f2</StsId>
+                <OrgnlInstrId>INST-20250921-00081</OrgnlInstrId>
+                <OrgnlEndToEndId>E2E-20250921-00081</OrgnlEndToEndId>
+                <TxSts>ACSC</TxSts>
+                <AccptncDtTm>2025-09-21T10:00:00+00:00Z</AccptncDtTm>
+                <OrgnlTxRef><Amt><InstdAmt Ccy="USD">6046.56</InstdAmt></Amt></OrgnlTxRef>
+            </TxInfAndSts>
+        <OrgnlPmtInfAndSts>
+    <FIToFIPmtStsRpt>
+<Document>
+```
+
+#### camt054
+
+```xml
+<?xml version='1.0' encoding='utf-8'?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:camt.054.001.08">
+    <BkToCstmrDbtCdtNtfctn>
+        <GrpHdr>
+            <MsgId>CAMT054-3788c0e580</MsgId>
+            <CreDtTm>2025-09-21T18:00:00Z</CreDtTm>
+        </GrpHdr>
+        <Ntfctn>
+            <Acct>
+                <Id>
+                    <IBAN>DE6681088264263617906307</IBAN>
+                </Id>
+            </Acct>
+        <Ntry>
+            <Amt Ccy="GBP">64.77</Amt>
+            <CdtDbtInd>DBIT</CdtDbtInd>
+            <BookgDt>
+                <Dt>2025-09-21</Dt>
+            </BookgDt>
+            <ValDt>
+                <Dt>2025-09-21</Dt>
+            </ValDt>
+            <AddtlNtryInf>SEPA CT Lars Garcia Ref 2025-09-0192</AddtlNtryInf>
+        </Ntry>
+    <BkToCstmrDbtCdtNtfctn>
+<Document>
+```
+
 ⬆️ [Index](#2-index)
 
 ## 5. Functional Requirements
