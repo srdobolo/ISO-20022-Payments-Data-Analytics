@@ -528,8 +528,6 @@ flowchart TD
 
 [Conceptual Model]
 
-!include "docs/logical-model.md" 
-
 [Logical Model](docs/logical-model.md)
 
 [Relational Model](docs\data-model.md)
