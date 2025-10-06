@@ -492,8 +492,8 @@ This section defines the performance, security, and operational constraints for 
                   └─────────┬────────────────────┘
                             │
                             ▼
-             ┌─────────────────────────────────────┐
-             │        Power BI Data Model          │
+             ┌────────────────────────────────────┐
+             │        Power BI Data Model         │
              │ FactPayments + Dim tables          │
              │ Role-playing dimensions for dates  │
              └─────────┬──────────────────────────┘
