@@ -229,9 +229,11 @@ This section defines the performance, security, and operational constraints for 
 
 [Conceptual Model]
 
+!include "docs/logical-model.md"
+
 [Logical Model](docs/logical-model.md)
 
-docs\data-model.md
+[Relational Model](docs\data-model.md)
 
 [Physical Model](docs/physical-model.sql)
 
