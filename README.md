@@ -565,11 +565,307 @@ flowchart TD
 
 [Conceptual Model]
 
-[Logical Model](docs/logical-model.md)
+### 9.1 Logical Data Model
 
-[Relational Model](docs\data-model.md)
+This document defines the logical data model for the ISO 20022 Payments Data Analytics project.
+It specifies the entities, attributes, keys, and relationships required to support analytical dashboards in Power BI and other BI tools.
 
-[Physical Model](docs/physical-model.sql)
+#### FactPayments
+
+| Attribute             | Data Type           | Key | Description                                                 |
+| --------------------- | ------------------- | --- | ----------------------------------------------------------- |
+| **PaymentID**         | VARCHAR             | PK  | Unique identifier per transaction (e.g., `MsgId-InstrId`)   |
+| MsgId                 | VARCHAR             |     | Message identifier from pacs.008                            |
+| InstrId               | VARCHAR             |     | Instruction identifier                                      |
+| EndToEndId            | VARCHAR             |     | End-to-end reference linking pain.001 → pacs.008 → camt.054 |
+| PaymentDate           | DATETIME (ISO 8601) | FK  | Links to DimDateTime_Payment                                |
+| SettlementDate        | DATETIME (ISO 8601) | FK  | Links to DimDateTime_Settlement                             |
+| Amount                | DECIMAL(18,2)       |     | Transaction amount                                          |
+| CurrencyCode          | VARCHAR(3)          | FK  | ISO 4217 currency code (e.g., EUR, USD)                     |
+| DebtorID              | VARCHAR             | FK  | Links to DimParty_Debtor                                    |
+| CreditorID            | VARCHAR             | FK  | Links to DimParty_Creditor                                  |
+| DebtorAgentBIC        | VARCHAR(11)         |     | BIC of debtor’s bank                                        |
+| CreditorAgentBIC      | VARCHAR(11)         |     | BIC of creditor’s bank                                      |
+| PurposeCode           | VARCHAR(4)          | FK  | ISO 20022 Purpose Code (e.g., SALA, SUPP)                   |
+| StatusCode            | VARCHAR(4)          | FK  | ISO 20022 Status Code (e.g., ACSP, RJCT)                    |
+| ProcessingTimeMinutes | DECIMAL(10,2)       |     | Derived: settlement − payment time in minutes               |
+
+#### DimParty_Debtor
+
+| Attribute   | Data Type | Key | Description                                 |
+| ----------- | --------- | --- | ------------------------------------------- |
+| PartyID     | VARCHAR   | PK  | Unique ID for debtor entity                 |
+| Name        | VARCHAR   |     | Name of debtor (individual or organization) |
+| IBAN        | VARCHAR   |     | Debtor account IBAN                         |
+| CountryCode | CHAR(2)   |     | ISO country code of debtor                  |
+
+#### DimParty_Creditor
+
+| Attribute   | Data Type | Key | Description                                   |
+| ----------- | --------- | --- | --------------------------------------------- |
+| PartyID     | VARCHAR   | PK  | Unique ID for creditor entity                 |
+| Name        | VARCHAR   |     | Name of creditor (individual or organization) |
+| IBAN        | VARCHAR   |     | Creditor account IBAN                         |
+| CountryCode | CHAR(2)   |     | ISO country code of creditor                  |
+
+#### DimCurrency
+
+| Attribute      | Data Type  | Key | Description               |
+| -------------- | ---------- | --- | ------------------------- |
+| CurrencyCode   | VARCHAR(3) | PK  | ISO 4217 currency code    |
+| CurrencyName   | VARCHAR    |     | Full name of the currency |
+| CurrencySymbol | VARCHAR    |     | Symbol (€, $, £)          |
+
+#### DimPurposeCode
+
+| Attribute   | Data Type  | Key | Description                                      |
+| ----------- | ---------- | --- | ------------------------------------------------ |
+| PurposeCode | VARCHAR(4) | PK  | ISO 20022 Purpose Code                           |
+| Description | VARCHAR    |     | Human-readable explanation (e.g., SALA = Salary) |
+
+#### DimStatus
+
+| Attribute   | Data Type  | Key | Description                              |
+| ----------- | ---------- | --- | ---------------------------------------- |
+| StatusCode  | VARCHAR(4) | PK  | ISO 20022 Status Code (e.g., ACSP, RJCT) |
+| Description | VARCHAR    |     | Meaning of the status                    |
+
+#### DimDateTime_Payment
+
+| Attribute  | Data Type           | Key | Description                            |
+| ---------- | ------------------- | --- | -------------------------------------- |
+| DateTime   | DATETIME (ISO 8601) | PK  | Unique timestamp (to minute precision) |
+| Date       | DATE                |     | Calendar date                          |
+| Time       | TIME                |     | Time of day                            |
+| Hour       | INT                 |     | Hour (0–23)                            |
+| Minute     | INT                 |     | Minute (0–59)                          |
+| Year       | INT                 |     | Calendar year                          |
+| Month      | INT                 |     | Month number (1–12)                    |
+| MonthName  | VARCHAR             |     | Month name (January, February, etc.)   |
+| Day        | INT                 |     | Day of month                           |
+| WeekNumber | INT                 |     | ISO week number                        |
+
+#### DimDateTime_Settlement
+
+| Attribute  | Data Type           | Key | Description                            |
+| ---------- | ------------------- | --- | -------------------------------------- |
+| DateTime   | DATETIME (ISO 8601) | PK  | Unique timestamp (to minute precision) |
+| Date       | DATE                |     | Calendar date                          |
+| Time       | TIME                |     | Time of day                            |
+| Hour       | INT                 |     | Hour (0–23)                            |
+| Minute     | INT                 |     | Minute (0–59)                          |
+| Year       | INT                 |     | Calendar year                          |
+| Month      | INT                 |     | Month number (1–12)                    |
+| MonthName  | VARCHAR             |     | Month name (January, February, etc.)   |
+| Day        | INT                 |     | Day of month                           |
+| WeekNumber | INT                 |     | ISO week number                        |
+
+#### 9.2 Relational Model
+
+```mermaid
+erDiagram
+    FACTPAYMENTS {
+        string PaymentID PK
+        string MsgId
+        string InstrId
+        string EndToEndId
+        datetime PaymentDate
+        datetime SettlementDate
+        decimal Amount
+        string CurrencyCode FK
+        string DebtorID FK
+        string CreditorID FK
+        string DebtorAgentBIC
+        string CreditorAgentBIC
+        string PurposeCode FK
+        string StatusCode FK
+        decimal ProcessingTimeMinutes
+    }
+
+    DIMPARTY_DEBTOR {
+        string PartyID PK
+        string Name
+        string IBAN
+        string CountryCode
+    }
+
+    DIMPARTY_CREDITOR {
+        string PartyID PK
+        string Name
+        string IBAN
+        string CountryCode
+    }
+
+    DIMCURRENCY {
+        string CurrencyCode PK
+        string CurrencyName
+        string CurrencySymbol
+    }
+
+    DIMPURPOSECODE {
+        string PurposeCode PK
+        string Description
+    }
+
+    DIMSTATUS {
+        string StatusCode PK
+        string Description
+    }
+
+    DIMDATETIME_PAYMENT {
+        datetime DateTime PK
+        date Date
+        string Time
+        int Hour
+        int Minute
+        int Year
+        int Month
+        string MonthName
+        int Day
+        int WeekNumber
+    }
+
+    DIMDATETIME_SETTLEMENT {
+        datetime DateTime PK
+        date Date
+        string Time
+        int Hour
+        int Minute
+        int Year
+        int Month
+        string MonthName
+        int Day
+        int WeekNumber
+    }
+
+    FACTPAYMENTS }o--|| DIMPARTY_DEBTOR : "DebtorID → PartyID"
+    FACTPAYMENTS }o--|| DIMPARTY_CREDITOR : "CreditorID → PartyID"
+    FACTPAYMENTS }o--|| DIMCURRENCY : "CurrencyCode"
+    FACTPAYMENTS }o--|| DIMPURPOSECODE : "PurposeCode"
+    FACTPAYMENTS }o--|| DIMSTATUS : "StatusCode"
+    FACTPAYMENTS }o--|| DIMDATETIME_PAYMENT : "PaymentDate → DateTime"
+    FACTPAYMENTS }o--|| DIMDATETIME_SETTLEMENT : "SettlementDate → DateTime"
+```
+
+#### 9.3 Physical Model
+
+```sql
+-- ===========================================
+-- PHYSICAL MODEL - ISO 20022 Payments Data Analytics
+-- ===========================================
+
+-- Drop existing tables if needed (be careful in prod)
+DROP TABLE IF EXISTS FactPayments;
+DROP TABLE IF EXISTS DimParty_Debtor;
+DROP TABLE IF EXISTS DimParty_Creditor;
+DROP TABLE IF EXISTS DimCurrency;
+DROP TABLE IF EXISTS DimPurposeCode;
+DROP TABLE IF EXISTS DimStatus;
+DROP TABLE IF EXISTS DimDateTime_Payment;
+DROP TABLE IF EXISTS DimDateTime_Settlement;
+
+-- ============================
+-- DIMENSIONS
+-- ============================
+
+CREATE TABLE DimParty_Debtor (
+    PartyID        VARCHAR(50) PRIMARY KEY,
+    Name           VARCHAR(255),
+    IBAN           VARCHAR(34),
+    CountryCode    CHAR(2)
+);
+
+CREATE TABLE DimParty_Creditor (
+    PartyID        VARCHAR(50) PRIMARY KEY,
+    Name           VARCHAR(255),
+    IBAN           VARCHAR(34),
+    CountryCode    CHAR(2)
+);
+
+CREATE TABLE DimCurrency (
+    CurrencyCode   VARCHAR(3) PRIMARY KEY,
+    CurrencyName   VARCHAR(100),
+    CurrencySymbol VARCHAR(10)
+);
+
+CREATE TABLE DimPurposeCode (
+    PurposeCode    VARCHAR(10) PRIMARY KEY,
+    Description    VARCHAR(255)
+);
+
+CREATE TABLE DimStatus (
+    StatusCode     VARCHAR(10) PRIMARY KEY,
+    Description    VARCHAR(255)
+);
+
+CREATE TABLE DimDateTime_Payment (
+    DateTime       TIMESTAMP PRIMARY KEY,
+    Date           DATE NOT NULL,
+    Time           TIME NOT NULL,
+    Hour           INT,
+    Minute         INT,
+    Year           INT,
+    Month          INT,
+    MonthName      VARCHAR(20),
+    Day            INT,
+    WeekNumber     INT
+);
+
+CREATE TABLE DimDateTime_Settlement (
+    DateTime       TIMESTAMP PRIMARY KEY,
+    Date           DATE NOT NULL,
+    Time           TIME NOT NULL,
+    Hour           INT,
+    Minute         INT,
+    Year           INT,
+    Month          INT,
+    MonthName      VARCHAR(20),
+    Day            INT,
+    WeekNumber     INT
+);
+
+-- ============================
+-- FACT TABLE
+-- ============================
+
+CREATE TABLE FactPayments (
+    PaymentID              VARCHAR(100) PRIMARY KEY,
+    MsgId                  VARCHAR(100),
+    InstrId                VARCHAR(100),
+    EndToEndId             VARCHAR(100),
+    PaymentDate            TIMESTAMP,
+    SettlementDate         TIMESTAMP,
+    Amount                 DECIMAL(18,2),
+    CurrencyCode           VARCHAR(3),
+    DebtorID               VARCHAR(50),
+    CreditorID             VARCHAR(50),
+    DebtorAgentBIC         VARCHAR(11),
+    CreditorAgentBIC       VARCHAR(11),
+    PurposeCode            VARCHAR(10),
+    StatusCode             VARCHAR(10),
+    ProcessingTimeMinutes  DECIMAL(10,2),
+
+    FOREIGN KEY (CurrencyCode) REFERENCES DimCurrency (CurrencyCode),
+    FOREIGN KEY (DebtorID) REFERENCES DimParty_Debtor (PartyID),
+    FOREIGN KEY (CreditorID) REFERENCES DimParty_Creditor (PartyID),
+    FOREIGN KEY (PurposeCode) REFERENCES DimPurposeCode (PurposeCode),
+    FOREIGN KEY (StatusCode) REFERENCES DimStatus (StatusCode),
+    FOREIGN KEY (PaymentDate) REFERENCES DimDateTime_Payment (DateTime),
+    FOREIGN KEY (SettlementDate) REFERENCES DimDateTime_Settlement (DateTime)
+);
+
+-- ============================
+-- Indexes for performance
+-- ============================
+
+CREATE INDEX idx_factpayments_currency ON FactPayments (CurrencyCode);
+CREATE INDEX idx_factpayments_debtor ON FactPayments (DebtorID);
+CREATE INDEX idx_factpayments_creditor ON FactPayments (CreditorID);
+CREATE INDEX idx_factpayments_paymentdate ON FactPayments (PaymentDate);
+CREATE INDEX idx_factpayments_settlementdate ON FactPayments (SettlementDate);
+CREATE INDEX idx_factpayments_status ON FactPayments (StatusCode);
+CREATE INDEX idx_factpayments_purpose ON FactPayments (PurposeCode);
+```
 
 ### Fact Table
 
