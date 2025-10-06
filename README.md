@@ -23,6 +23,8 @@
 
 ## 3. Business Fundamentals
 
+Falta aqui fundamentos. Explicar também o formato de cada ficheiro xml e mapeamento das tags para colunas.
+
 ### 3.1 Structure of an ISO 20022 Message Name
 
 ```bash
