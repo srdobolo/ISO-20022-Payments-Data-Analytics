@@ -447,7 +447,7 @@ This section defines the performance, security, and operational constraints for 
 
 - NFR9: All files and processed data must comply with GDPR and ISO 27001 standards.
 - NFR10: Sensitive identifiers (e.g., IBANs, names) must be masked or pseudonymized in non-production environments.
-- NFR11: Access to dashboards must be controlled through Azure AD / Microsoft 365 authentication with role-based access control.
+- NFR11: Access to dashboards must be controlled through Microsoft 365 authentication with role-based access control.
 
 ### 6.5 Maintainability
 
@@ -508,7 +508,7 @@ This section defines the performance, security, and operational constraints for 
           │ - Advanced Analytics                      │
           └───────────────────────────────────────────┘
 
-```mermaid
+```mermaid.js
 flowchart TD
     A[Pain.001 XML] --> B[Pacs.008 XML]
     B --> C[Pacs.002 XML]
