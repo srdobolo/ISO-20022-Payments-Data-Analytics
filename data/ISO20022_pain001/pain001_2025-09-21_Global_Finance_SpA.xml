@@ -1,5 +1,21 @@
 <?xml version='1.0' encoding='utf-8'?>
-<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.09"><CstmrCdtTrfInitn><GrpHdr><MsgId>PAIN-2025-09-21-Global_Finance_SpA-97dab3c3</MsgId><CreDtTm>2025-09-21T08:00:00Z</CreDtTm><NbOfTxs>192</NbOfTxs><CtrlSum>15914195.66</CtrlSum><InitgPty><Nm>Global Finance SpA</Nm></InitgPty></GrpHdr><PmtInf><PmtInfId>PMTINF-2025-09-21-165141</PmtInfId><PmtMtd>TRF</PmtMtd><ReqdExctnDt>2025-09-21</ReqdExctnDt><Dbtr><Nm>Global Finance SpA</Nm></Dbtr><DbtrAcct><Id><IBAN>SE6510619244403548659086</IBAN></Id></DbtrAcct><DbtrAgt><FinInstnId><BIC>NDEASESSXXX</BIC></FinInstnId></DbtrAgt><CdtTrfTxInf>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.09">
+  <CstmrCdtTrfInitn>
+    <GrpHdr>
+      <MsgId>PAIN-2025-09-21-Global_Finance_SpA-97dab3c3</MsgId>
+      <CreDtTm>2025-09-21T08:00:00Z</CreDtTm>
+      <NbOfTxs>192</NbOfTxs>
+      <CtrlSum>15914195.66</CtrlSum>
+      <InitgPty><Nm>Global Finance SpA</Nm></InitgPty>
+    </GrpHdr>
+      <PmtInf>
+        <PmtInfId>PMTINF-2025-09-21-165141</PmtInfId>
+        <PmtMtd>TRF</PmtMtd>
+        <ReqdExctnDt>2025-09-21</ReqdExctnDt>
+        <Dbtr><Nm>Global Finance SpA</Nm></Dbtr>
+        <DbtrAcct><Id><IBAN>SE6510619244403548659086</IBAN></Id></DbtrAcct>
+        <DbtrAgt><FinInstnId><BIC>NDEASESSXXX</BIC></FinInstnId></DbtrAgt>
+        <CdtTrfTxInf>
           <PmtId>
             <InstrId>INST-20250921-00000</InstrId>
             <EndToEndId>E2E-20250921-00000</EndToEndId>
@@ -23,7 +39,8 @@
           <CdtrAcct><Id><IBAN>DE7133045310603257969962</IBAN></Id></CdtrAcct>
           <RmtInf><Ustrd>Ref 2025-09-0000</Ustrd></RmtInf>
           <Purp><Cd>SERV</Cd></Purp>
-        </CdtTrfTxInf><CdtTrfTxInf>
+        </CdtTrfTxInf>
+        <CdtTrfTxInf>
           <PmtId>
             <InstrId>INST-20250921-00001</InstrId>
             <EndToEndId>E2E-20250921-00001</EndToEndId>
