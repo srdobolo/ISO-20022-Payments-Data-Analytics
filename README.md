@@ -225,7 +225,19 @@ This section defines the performance, security, and operational constraints for 
 | **4. Compliance / Regulatory**  | 🕵 Page 4: Regulatory / Compliance                              | • Filter by PurposeCode, corridor. • Identify missing LEI or structured remittance. • Export filtered lists for reporting. | ✅ Viewer + Export; may have access to specific RLS (e.g., by jurisdiction). |
 | **5. Data Science / Analytics** | 📈 Page 5: Advanced Analytics                                   | • Develop forecasts, anomaly detection. • Run custom Power BI or Python models.                                                | ✅ Contributor or shared dataset access                                      |
 
-## 9. Modelo Relacional Final (Power BI)
+## 9. Conceptual Model
+
+## 10. Logical Model
+
+[Logical Model](docs/logical-model.md)
+
+## 11. Relational Model
+
+docs\data-model.md
+
+## 12. Physical Model
+
+[Physical Model](docs/physical-model.sql)
 
 ### Fact Table
 
