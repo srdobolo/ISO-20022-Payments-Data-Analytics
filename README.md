@@ -163,66 +163,7 @@ This section defines the performance, security, and operational constraints for 
 
 ### 7.1 Technical Architecture Overview
 
-                  ┌────────────────────┐
-                  │   Pain.001 XML     │
-                  └─────────┬──────────┘
-                            │
-                  ┌────────────────────┐
-                  │   Pacs.008 XML     │
-                  └─────────┬──────────┘
-                            │
-                  ┌────────────────────┐
-                  │   Pacs.002 XML     │
-                  └─────────┬──────────┘
-                            │
-                  ┌────────────────────┐
-                  │   Camt.054 XML     │
-                  └─────────┬──────────┘
-                            │
-                            ▼
-                  ┌──────────────────────────────┐
-                  │        Python ETL            │
-                  │ - XML parsing (ElementTree)  │
-                  │ - Fact & Dim generation      │
-                  │ - DateTime role dimensions   │
-                  └─────────┬────────────────────┘
-                            │
-                            ▼
-             ┌─────────────────────────────────────┐
-             │        Power BI Data Model          │
-             │ FactPayments + Dim tables          │
-             │ Role-playing dimensions for dates  │
-             └─────────┬──────────────────────────┘
-                            │
-                            ▼
-          ┌───────────────────────────────────────────┐
-          │            Power BI Dashboards            │
-          │ - Payments Overview                       │
-          │ - Operational Monitoring                  │
-          │ - Reconciliation                          │
-          │ - Regulatory / Compliance                 │
-          │ - Advanced Analytics                      │
-          └───────────────────────────────────────────┘
-
-```mermaid
-flowchart TD
-    A[Pain.001 XML] --> B[Pacs.008 XML]
-    B --> C[Pacs.002 XML]
-    C --> D[Camt.054 XML]
-    D --> E["Python ETL
-    - XML parsing (ElementTree)
-    - Fact & Dim generation
-    - DateTime role dimensions"]
-    E --> F["Power BI Data Model
-    - FactPayments + Dim tables
-    - Role-playing dimensions for dates"]
-    F --> G["Power BI Dashboards
-    - Payments Overview
-    - Operational Monitoring
-    - Reconciliation
-    - Regulatory / Compliance
-    - Advanced Analytics"]
-```
+[Technical Architecture Overview](docs\technical-architecture.md)
 
 ### 7.2 Technology Stack
 
