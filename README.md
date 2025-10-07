@@ -73,8 +73,6 @@ The ISO 20022 Payments Data Analytics project aims to:
 - pain - **PA**yment **IN**itiation - Used between customer → bank for initiating payments (e.g., bulk credit transfers, direct debits).
 - pacs - **PA**yment **C**learing and **S**ettlement - Used between financial institutions (bank ↔ bank) for interbank payment processing.
 - camt - **CA**sh **M**anagemen**t** - Used for account reporting, statements, notifications, and reconciliations.
-- reda - **Re**ference **Da**ta - Used for exchanging static reference data like business party info.
-- auth - **Auth**orities - Messages exchanged with regulatory or supervisory authorities.
 
 ### 3.3 Common Message Identifiers
 
@@ -86,6 +84,8 @@ The ISO 20022 Payments Data Analytics project aims to:
 ⬆️ [Index](#2-index)
 
 ## 4. Dataset Structure
+
+https://www.iso20022.org/iso-20022-message-definitions
 
 ```bash
 /ISO20022_Sample_Data/

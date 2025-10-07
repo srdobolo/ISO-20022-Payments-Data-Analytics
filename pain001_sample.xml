@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.09">
+  <CstmrCdtTrfInitn>
+    <GrpHdr>
+      <MsgId>PAIN-2025-09-21-Global_Finance_SpA-97dab3c3</MsgId>
+      <CreDtTm>2025-09-21T08:00:00Z</CreDtTm>
+      <NbOfTxs>1</NbOfTxs>
+      <CtrlSum>1027874.86</CtrlSum>
+      <InitgPty>
+        <Nm>Global Finance SpA</Nm>
+      </InitgPty>
+    </GrpHdr>
+    <PmtInf>
+      <PmtInfId>PMTINF-2025-09-21-165141</PmtInfId>
+      <PmtMtd>TRF</PmtMtd>
+      <ReqdExctnDt>2025-09-21</ReqdExctnDt>
+      <Dbtr>
+        <Nm>Global Finance SpA</Nm>
+      </Dbtr>
+      <DbtrAcct>
+        <Id>
+          <IBAN>SE6510619244403548659086</IBAN>
+        </Id>
+      </DbtrAcct>
+      <DbtrAgt>
+        <FinInstnId>
+          <BIC>NDEASESSXXX</BIC>
+        </FinInstnId>
+      </DbtrAgt>
+      <CdtTrfTxInf>
+        <PmtId>
+          <InstrId>INST-20250921-00000</InstrId>
+          <EndToEndId>E2E-20250921-00000</EndToEndId>
+        </PmtId>
+        <PmtTpInf>
+          <SvcLvl>
+            <Cd>NURG</Cd>
+          </SvcLvl>
+          <InstrPrty>NORM</InstrPrty>
+        </PmtTpInf>
+        <Amt>
+          <InstdAmt Ccy="GBP">1027874.86</InstdAmt>
+        </Amt>
+        <UltmtDbtr>
+          <Nm>Corp_Initiator_01_00</Nm>
+        </UltmtDbtr>
+        <CdtrAgt>
+          <FinInstnId>
+            <BIC>HYVEDEMMXXX</BIC>
+          </FinInstnId>
+        </CdtrAgt>
+        <Cdtr>
+          <Nm>Peter Dubois</Nm>
+          <PstlAdr>
+            <StrtNm>Musterstrasse</StrtNm>
+            <BldgNb>22</BldgNb>
+            <TwnNm>Berlin</TwnNm>
+            <Ctry>DE</Ctry>
+          </PstlAdr>
+        </Cdtr>
+        <CdtrAcct>
+          <Id>
+            <IBAN>DE7133045310603257969962</IBAN>
+          </Id>
+        </CdtrAcct>
+        <RmtInf>
+          <Ustrd>Ref 2025-09-0000</Ustrd>
+        </RmtInf>
+        <Purp>
+          <Cd>SERV</Cd>
+        </Purp>
+      </CdtTrfTxInf>
+    </PmtInf>
+  </CstmrCdtTrfInitn>
+</Document>
