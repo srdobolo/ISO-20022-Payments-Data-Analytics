@@ -85,7 +85,9 @@ The ISO 20022 Payments Data Analytics project aims to:
 
 ## 4. Dataset Structure
 
+```bash
 https://www.iso20022.org/iso-20022-message-definitions
+```
 
 ```bash
 /ISO20022_Sample_Data/
