@@ -1,240 +1,177 @@
-# file: generate_pain001.py
-from typing import Optional, List, Dict
-from xml.etree.ElementTree import Element, SubElement, ElementTree, register_namespace
-from xml.dom import minidom
-from datetime import datetime, date
-from decimal import Decimal
-from io import BytesIO
+import os
+import random
 import uuid
+from datetime import datetime, timedelta, UTC
+from faker import Faker
+from lxml import etree
 
-# Namespace para pain.001.001.09
-PAIN001_NS = "urn:iso:std:iso:20022:tech:xsd:pain.001.001.09"
+# Initialize Faker for realistic names, addresses, BICs, etc.
+fake = Faker()
+Faker.seed(42)
 
-# Registar o namespace como *default* (evita ns0:)
-register_namespace('', PAIN001_NS)
+# Output folder for generated XML files
+OUTPUT_DIR = "synthetic_iso20022"
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# ------------ Helpers ------------
+# Common ISO 20022 lists
+PURPOSE_CODES = ["SALA", "SUPP", "TAXS", "TRAD", "DIVD", "INTC", "GOVT", "PENS"]
+CURRENCIES = ["EUR", "USD", "GBP", "CHF", "PLN", "CAD", "JPY"]
 
-def _el(parent, tag, text: Optional[str] = None, attrib: Optional[Dict[str, str]] = None, ns: str = PAIN001_NS):
-    """Cria elemento com namespace default e texto opcional."""
-    e = SubElement(parent, f"{{{ns}}}{tag}", attrib or {})
-    if text is not None:
-        e.text = text
-    return e
+# Approximate exchange rates to EUR (for amount scaling)
+CURRENCY_RATES = {
+    "EUR": 1.0,
+    "USD": 0.92,
+    "GBP": 1.17,
+    "CHF": 1.05,
+    "PLN": 0.22,
+    "CAD": 0.68,
+    "JPY": 0.0062
+}
 
-def _sum_amounts(transfers: List[dict]) -> Decimal:
-    total = Decimal("0.00")
-    for t in transfers:
-        total += Decimal(str(t["amount"]))
-    return total
+# Purpose-specific EUR ranges
+PURPOSE_AMOUNT_RANGES = {
+    "PENS": (500, 5000),
+    "SALA": (870, 10000)
+}
 
-def _serialize_with_decl(root: Element) -> bytes:
-    """Serializa com declaração XML usando ElementTree.write -> BytesIO (compat amplo)."""
-    bio = BytesIO()
-    ElementTree(root).write(bio, encoding="utf-8", xml_declaration=True, method="xml")
-    return bio.getvalue()
+# -----------------------------
+# Helper Functions
+# -----------------------------
+def random_date(start, end):
+    """Generate a random datetime between two datetimes."""
+    return start + timedelta(seconds=random.randint(0, int((end - start).total_seconds())))
 
-def _pretty(xml_bytes: bytes) -> bytes:
-    """Indentação bonita (compatível 3.9+)."""
-    dom = minidom.parseString(xml_bytes)
-    pretty = dom.toprettyxml(indent="  ", encoding="utf-8")
-    return pretty
+def make_iban(country="DE"):
+    """Generate a pseudo-random IBAN (not checksum-valid but structurally plausible)."""
+    return f"{country}{random.randint(10,99)}{fake.bban()}"
 
-# ------------ Gerador ------------
+def iso_now():
+    """Generate a timezone-aware ISO 8601 UTC timestamp without microseconds."""
+    return datetime.now(UTC).replace(microsecond=0).isoformat()
 
-def generate_pain001_xml(
-    debtor_name: str,
-    debtor_iban: str,
-    debtor_bic: str,
-    requested_exec_date: date,
-    transfers: List[dict],
-    message_id: Optional[str] = None,
-    payment_info_id: Optional[str] = None,
-    created_datetime_utc: Optional[datetime] = None,
-    payment_method: str = "TRF",
-) -> bytes:
+def random_amount_for_purpose(purpose, currency):
     """
-    transfers: lista de dicts com, por ex.:
-      {
-        "instr_id": "INST-20250921-00000",
-        "end_to_end_id": "E2E-20250921-00000",
-        "amount": 1027874.86,          # numérico ou string
-        "currency": "GBP",
-        "svc_level": "NURG",           # ex.: "SEPA", "NURG"
-        "instr_prty": "NORM",          # ex.: "HIGH"/"NORM"
-        "ultimate_debtor": "Corp_Initiator_01_00",
-        "creditor_name": "Peter Dubois",
-        "creditor_address": {          # opcional
-            "StrtNm": "Musterstrasse",
-            "BldgNb": "22",
-            "TwnNm": "Berlin",
-            "Ctry": "DE"
-        },
-        "creditor_iban": "DE7133045310603257969962",
-        "creditor_bic": "HYVEDEMMXXX",
-        "remittance_info": "Ref 2025-09-0000",
-        "purpose_code": "SERV"
-      }
+    Generate a realistic amount for a given purpose code,
+    scaled to the target currency using approximate FX rates.
     """
-    # IDs e contagens
-    msg_id = message_id or "PAIN-{date}-{debtor}-{sufx}".format(
-        date=datetime.utcnow().strftime('%Y-%m-%d'),
-        debtor=debtor_name.replace(' ', '_'),
-        sufx=uuid.uuid4().hex[:8],
-    )
-    pmt_inf_id = payment_info_id or "PMTINF-{stamp}".format(
-        stamp=datetime.utcnow().strftime('%Y-%m-%d-%H%M%S')
-    )
-    nb_txs = str(len(transfers))
-    ctrl_sum = "{:.2f}".format(_sum_amounts(transfers))
-    created_ts = (created_datetime_utc or datetime.utcnow()).replace(microsecond=0).isoformat() + "Z"
+    # Select EUR amount range based on purpose
+    if purpose in PURPOSE_AMOUNT_RANGES:
+        min_eur, max_eur = PURPOSE_AMOUNT_RANGES[purpose]
+    else:
+        min_eur, max_eur = 5, 10000
 
-    # Raiz
-    Document = Element("{%s}Document" % PAIN001_NS)
-    # (não precisamos de Document.set("xmlns", ...) porque register_namespace já força default xmlns)
+    eur_amount = random.uniform(min_eur, max_eur)
+    rate = CURRENCY_RATES.get(currency, 1.0)
+    converted = eur_amount / rate
+    return round(converted, 2), eur_amount
 
-    # CstmrCdtTrfInitn
-    CstmrCdtTrfInitn = _el(Document, "CstmrCdtTrfInitn")
+# -----------------------------
+# Main XML Generation Function
+# -----------------------------
+def generate_pain001(file_idx=1, n_transactions=50):
+    ns = {None: "urn:iso:std:iso:20022:tech:xsd:pain.001.001.12"}
+    root = etree.Element("Document", nsmap=ns)
+    cstmr = etree.SubElement(root, "CstmrCdtTrfInitn")
 
-    # ---- GrpHdr ----
-    GrpHdr = _el(CstmrCdtTrfInitn, "GrpHdr")
-    _el(GrpHdr, "MsgId", msg_id)
-    _el(GrpHdr, "CreDtTm", created_ts)
-    _el(GrpHdr, "NbOfTxs", nb_txs)
-    _el(GrpHdr, "CtrlSum", ctrl_sum)
-    InitgPty = _el(GrpHdr, "InitgPty")
-    _el(InitgPty, "Nm", debtor_name)
+    # === Group Header ===
+    grp_hdr = etree.SubElement(cstmr, "GrpHdr")
+    msg_id = f"MSG{file_idx}-{uuid.uuid4().hex[:8]}"
+    etree.SubElement(grp_hdr, "MsgId").text = msg_id
+    etree.SubElement(grp_hdr, "CreDtTm").text = iso_now()
+    etree.SubElement(grp_hdr, "NbOfTxs").text = str(n_transactions)
 
-    # ---- PmtInf ----
-    PmtInf = _el(CstmrCdtTrfInitn, "PmtInf")
-    _el(PmtInf, "PmtInfId", pmt_inf_id)
-    _el(PmtInf, "PmtMtd", payment_method)
-    _el(PmtInf, "ReqdExctnDt", requested_exec_date.isoformat())
+    # Control sum in EUR
+    total_control_sum_eur = 0.0
 
-    Dbtr = _el(PmtInf, "Dbtr")
-    _el(Dbtr, "Nm", debtor_name)
+    # Debtor name (also used for InitiatingPartyName)
+    debtor_name = fake.name()
+    initg_party = etree.SubElement(grp_hdr, "InitgPty")
+    etree.SubElement(initg_party, "Nm").text = debtor_name
 
-    DbtrAcct = _el(PmtInf, "DbtrAcct")
-    Id = _el(DbtrAcct, "Id")
-    _el(Id, "IBAN", debtor_iban)
+    # === Payment Information block ===
+    pmt_inf = etree.SubElement(cstmr, "PmtInf")
+    pmt_inf_id = f"PMT-{uuid.uuid4().hex[:6]}"
+    etree.SubElement(pmt_inf, "PmtInfId").text = pmt_inf_id
+    etree.SubElement(pmt_inf, "PmtMtd").text = "TRF"
 
-    DbtrAgt = _el(PmtInf, "DbtrAgt")
-    FinInstnId = _el(DbtrAgt, "FinInstnId")
-    _el(FinInstnId, "BIC", debtor_bic)
+    exec_dt = random_date(datetime(2023, 1, 1, tzinfo=UTC), datetime(2025, 12, 31, tzinfo=UTC))
+    etree.SubElement(pmt_inf, "ReqdExctnDt").text = exec_dt.date().isoformat()
 
-    # ---- CdtTrfTxInf* ----
-    for i, t in enumerate(transfers):
-        tx = _el(PmtInf, "CdtTrfTxInf")
+    # Debtor
+    dbtr = etree.SubElement(pmt_inf, "Dbtr")
+    etree.SubElement(dbtr, "Nm").text = debtor_name
 
-        # PmtId
-        PmtId = _el(tx, "PmtId")
-        _el(PmtId, "InstrId", t.get("instr_id") or "INST-{date}-{n:05d}".format(date=requested_exec_date.strftime('%Y%m%d'), n=i))
-        _el(PmtId, "EndToEndId", t.get("end_to_end_id") or "E2E-{date}-{n:05d}".format(date=requested_exec_date.strftime('%Y%m%d'), n=i))
+    dbtr_acct = etree.SubElement(pmt_inf, "DbtrAcct")
+    dbtr_id = etree.SubElement(dbtr_acct, "Id")
+    etree.SubElement(dbtr_id, "IBAN").text = make_iban("DE")
 
-        # PmtTpInf
-        if t.get("svc_level") or t.get("instr_prty"):
-            PmtTpInf = _el(tx, "PmtTpInf")
-            if t.get("svc_level"):
-                SvcLvl = _el(PmtTpInf, "SvcLvl")
-                _el(SvcLvl, "Cd", t["svc_level"])
-            if t.get("instr_prty"):
-                _el(PmtTpInf, "InstrPrty", t["instr_prty"])
+    dbtr_agt = etree.SubElement(pmt_inf, "DbtrAgt")
+    fin = etree.SubElement(dbtr_agt, "FinInstnId")
+    etree.SubElement(fin, "BIC").text = fake.swift8()
 
-        # Amount
-        Amt = _el(tx, "Amt")
-        _el(
-            Amt,
-            "InstdAmt",
-            "{:.2f}".format(Decimal(str(t["amount"]))),
-            attrib={"Ccy": t.get("currency", "EUR")},
-        )
+    # === Transactions ===
+    for i in range(n_transactions):
+        cdt_trf = etree.SubElement(pmt_inf, "CdtTrfTxInf")
 
-        # Ultimate Debtor (opcional)
-        if t.get("ultimate_debtor"):
-            UltmtDbtr = _el(tx, "UltmtDbtr")
-            _el(UltmtDbtr, "Nm", t["ultimate_debtor"])
+        # Payment Identifiers
+        pmt_id = etree.SubElement(cdt_trf, "PmtId")
+        instr_id = f"INSTR-{i+1}"
+        end_to_end_id = f"E2E-{uuid.uuid4().hex[:10]}"
+        etree.SubElement(pmt_id, "InstrId").text = instr_id
+        etree.SubElement(pmt_id, "EndToEndId").text = end_to_end_id
 
-        # Creditor Agent
-        if t.get("creditor_bic"):
-            CdtrAgt = _el(tx, "CdtrAgt")
-            FinInstnId2 = _el(CdtrAgt, "FinInstnId")
-            _el(FinInstnId2, "BIC", t["creditor_bic"])
+        # PurposeCode first, to determine amount range
+        purpose_code = random.choice(PURPOSE_CODES)
 
-        # Creditor + endereço opcional
-        Cdtr = _el(tx, "Cdtr")
-        _el(Cdtr, "Nm", t["creditor_name"])
-        addr = t.get("creditor_address")
-        if isinstance(addr, dict) and any(addr.get(k) for k in ("StrtNm", "BldgNb", "TwnNm", "Ctry")):
-            PstlAdr = _el(Cdtr, "PstlAdr")
-            if addr.get("StrtNm"):
-                _el(PstlAdr, "StrtNm", addr["StrtNm"])
-            if addr.get("BldgNb"):
-                _el(PstlAdr, "BldgNb", addr["BldgNb"])
-            if addr.get("TwnNm"):
-                _el(PstlAdr, "TwnNm", addr["TwnNm"])
-            if addr.get("Ctry"):
-                _el(PstlAdr, "Ctry", addr["Ctry"])
+        # Currency & Amount
+        currency = random.choice(CURRENCIES)
+        amount_value, eur_equivalent = random_amount_for_purpose(purpose_code, currency)
+        total_control_sum_eur += eur_equivalent
 
-        # Creditor Account
-        CdtrAcct = _el(tx, "CdtrAcct")
-        Id2 = _el(CdtrAcct, "Id")
-        _el(Id2, "IBAN", t["creditor_iban"])
+        amt = etree.SubElement(cdt_trf, "Amt")
+        etree.SubElement(amt, "InstdAmt", Ccy=currency).text = f"{amount_value:.2f}"
 
-        # Remittance Info (Ustrd)
-        if t.get("remittance_info"):
-            RmtInf = _el(tx, "RmtInf")
-            _el(RmtInf, "Ustrd", t["remittance_info"])
+        # Creditor
+        cdtr = etree.SubElement(cdt_trf, "Cdtr")
+        etree.SubElement(cdtr, "Nm").text = fake.name()
 
-        # Purpose
-        if t.get("purpose_code"):
-            Purp = _el(tx, "Purp")
-            _el(Purp, "Cd", t["purpose_code"])
+        pstl = etree.SubElement(cdtr, "PstlAdr")
+        etree.SubElement(pstl, "StrtNm").text = fake.street_name()
+        etree.SubElement(pstl, "BldgNb").text = str(random.randint(1, 200))
+        etree.SubElement(pstl, "TwnNm").text = fake.city()
 
-    # Serializar com declaração e indentar
-    raw = _serialize_with_decl(Document)
-    return _pretty(raw)
+        # IBAN determines CreditorCountry
+        country_code = random.choice(["FR", "ES", "IT", "PT", "NL", "BE", "DE", "PL", "GB"])
+        creditor_iban = make_iban(country_code)
+        etree.SubElement(pstl, "Ctry").text = country_code
 
-# ------------ Exemplo (igual ao teu formato) ------------
+        cdtr_acct = etree.SubElement(cdt_trf, "CdtrAcct")
+        cdtr_id = etree.SubElement(cdtr_acct, "Id")
+        etree.SubElement(cdtr_id, "IBAN").text = creditor_iban
+
+        cdtr_agt = etree.SubElement(cdt_trf, "CdtrAgt")
+        fin2 = etree.SubElement(cdtr_agt, "FinInstnId")
+        etree.SubElement(fin2, "BIC").text = fake.swift8()
+
+        # Purpose & Remittance
+        etree.SubElement(etree.SubElement(cdt_trf, "Purp"), "Cd").text = purpose_code
+        rmt_inf = etree.SubElement(cdt_trf, "RmtInf")
+        etree.SubElement(rmt_inf, "Ustrd").text = fake.text(max_nb_chars=40)
+
+    # Set Control Sum in EUR
+    etree.SubElement(grp_hdr, "CtrlSum").text = f"{total_control_sum_eur:.2f}"
+
+    # Write XML to file
+    filename = os.path.join(OUTPUT_DIR, f"pain001_{file_idx}.xml")
+    tree = etree.ElementTree(root)
+    tree.write(filename, pretty_print=True, xml_declaration=True, encoding="UTF-8")
+    return filename
+
+# -----------------------------
+# Batch Generation Example
+# -----------------------------
 if __name__ == "__main__":
-    transfers = [
-        {
-            "instr_id": "INST-20250921-00000",
-            "end_to_end_id": "E2E-20250921-00000",
-            "amount": 1027874.86,
-            "currency": "GBP",
-            "svc_level": "NURG",
-            "instr_prty": "NORM",
-            "ultimate_debtor": "Corp_Initiator_01_00",
-            "creditor_name": "Peter Dubois",
-            "creditor_address": {
-                "StrtNm": "Musterstrasse",
-                "BldgNb": "22",
-                "TwnNm": "Berlin",
-                "Ctry": "DE",
-            },
-            "creditor_iban": "DE7133045310603257969962",
-            "creditor_bic": "HYVEDEMMXXX",
-            "remittance_info": "Ref 2025-09-0000",
-            "purpose_code": "SERV",
-        }
-    ]
-
-    created_dt = datetime(2025, 9, 21, 8, 0, 0)  # 2025-09-21T08:00:00Z
-    msg_id = "PAIN-2025-09-21-Global_Finance_SpA-97dab3c3"
-    pmtinf_id = "PMTINF-2025-09-21-165141"
-
-    xml_bytes = generate_pain001_xml(
-        debtor_name="Global Finance SpA",
-        debtor_iban="SE6510619244403548659086",
-        debtor_bic="NDEASESSXXX",
-        requested_exec_date=date(2025, 9, 21),
-        transfers=transfers,
-        message_id=msg_id,
-        payment_info_id=pmtinf_id,
-        created_datetime_utc=created_dt,
-    )
-
-    with open("pain001_sample.xml", "wb") as f:
-        f.write(xml_bytes)
-
-    print("Gerado: pain001_sample.xml")
+    for idx in range(1, 6):
+        n_tx = random.randint(10, 120)
+        file_path = generate_pain001(idx, n_tx)
+        print(f"✅ Generated {file_path} with {n_tx} transactions.")
